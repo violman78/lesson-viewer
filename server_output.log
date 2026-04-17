@@ -1,0 +1,1672 @@
+▲ Next.js 16.2.4 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.0.18:3000
+- Environments: .env.local
+✓ Ready in 196ms
+
+Error: Route "/share/[token]" used `params.token`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at SharedLessonViewerPage (src/app/share/[token]/page.tsx:15:11)
+  13 |
+  14 | export default async function SharedLessonViewerPage({ params }: { params: { token: string...
+> 15 |   const { token } = params;
+     |           ^
+  16 |   const supabase = createServerSupabaseClient();
+  17 |
+  18 |   let lesson: any = null;
+ GET /share/demo 200 in 7.6s (next.js: 422ms, application-code: 7.1s)
+Error: Route "/share/[token]" used `params.token`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at SharedLessonViewerPage (src/app/share/[token]/page.tsx:15:11)
+  13 |
+  14 | export default async function SharedLessonViewerPage({ params }: { params: { token: string...
+> 15 |   const { token } = params;
+     |           ^
+  16 |   const supabase = createServerSupabaseClient();
+  17 |
+  18 |   let lesson: any = null;
+ GET /share/demo 200 in 7.1s (next.js: 4ms, application-code: 7.1s)
+⚠ Blocked cross-origin request to Next.js dev resource /_next/webpack-hmr from "127.0.0.1".
+Cross-origin access to Next.js dev resources is blocked by default for safety.
+
+To allow this host in development, add it to "allowedDevOrigins" in next.config.js and restart the dev server:
+
+// next.config.js
+module.exports = {
+  allowedDevOrigins: ['127.0.0.1'],
+}
+
+Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
+⚠ Blocked cross-origin request to Next.js dev resource /__nextjs_font/geist-latin.woff2 from "127.0.0.1".
+Cross-origin access to Next.js dev resources is blocked by default for safety.
+
+To allow this host in development, add it to "allowedDevOrigins" in next.config.js and restart the dev server:
+
+// next.config.js
+module.exports = {
+  allowedDevOrigins: ['127.0.0.1'],
+}
+
+Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
+Error: Route "/share/[token]" used `params.token`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at SharedLessonViewerPage (src/app/share/[token]/page.tsx:15:11)
+  13 |
+  14 | export default async function SharedLessonViewerPage({ params }: { params: { token: string...
+> 15 |   const { token } = params;
+     |           ^
+  16 |   const supabase = createServerSupabaseClient();
+  17 |
+  18 |   let lesson: any = null;
+ GET /share/demo 200 in 7.1s (next.js: 4ms, application-code: 7.1s)
+⚠ Blocked cross-origin request to Next.js dev resource /_next/webpack-hmr from "192.168.0.18".
+Cross-origin access to Next.js dev resources is blocked by default for safety.
+
+To allow this host in development, add it to "allowedDevOrigins" in next.config.js and restart the dev server:
+
+// next.config.js
+module.exports = {
+  allowedDevOrigins: ['192.168.0.18'],
+}
+
+Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
+⚠ Blocked cross-origin request to Next.js dev resource /__nextjs_font/geist-latin.woff2 from "192.168.0.18".
+Cross-origin access to Next.js dev resources is blocked by default for safety.
+
+To allow this host in development, add it to "allowedDevOrigins" in next.config.js and restart the dev server:
+
+// next.config.js
+module.exports = {
+  allowedDevOrigins: ['192.168.0.18'],
+}
+
+Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
+✓ Compiled in 170ms
+ GET /share/demo 200 in 55ms (next.js: 6ms, application-code: 49ms)
+ GET /share/demo 200 in 38ms (next.js: 6ms, application-code: 32ms)
+ GET /share/demo 200 in 36ms (next.js: 5ms, application-code: 31ms)
+ GET /share/demo 200 in 36ms (next.js: 7ms, application-code: 29ms)
+ GET /share/demo 200 in 35ms (next.js: 5ms, application-code: 31ms)
+ GET /share/demo 200 in 40ms (next.js: 8ms, application-code: 32ms)
+ GET /share/demo 200 in 42ms (next.js: 6ms, application-code: 36ms)
+ GET /share/demo 200 in 38ms (next.js: 6ms, application-code: 32ms)
+✓ Compiled in 63ms
+ GET /share/demo 200 in 59ms (next.js: 9ms, application-code: 51ms)
+ GET /share/demo 200 in 62ms (next.js: 13ms, application-code: 49ms)
+ GET /share/demo 200 in 35ms (next.js: 3ms, application-code: 32ms)
+ GET /share/demo 200 in 42ms (next.js: 7ms, application-code: 34ms)
+ GET /share/demo 200 in 40ms (next.js: 4ms, application-code: 36ms)
+ GET /share/demo 200 in 36ms (next.js: 4ms, application-code: 32ms)
+ GET /share/demo 200 in 38ms (next.js: 5ms, application-code: 33ms)
+✓ Compiled in 21ms
+ GET /share/demo 200 in 134ms (next.js: 75ms, application-code: 59ms)
+ GET /admin 200 in 234ms (next.js: 206ms, application-code: 28ms)
+ GET /share/demo 200 in 43ms (next.js: 9ms, application-code: 34ms)
+ GET /share/demo 200 in 38ms (next.js: 5ms, application-code: 33ms)
+ GET /share/demo 200 in 40ms (next.js: 4ms, application-code: 36ms)
+ GET /share/demo 200 in 33ms (next.js: 6ms, application-code: 27ms)
+ GET /share/demo 200 in 42ms (next.js: 5ms, application-code: 36ms)
+ GET /share/demo 200 in 44ms (next.js: 10ms, application-code: 34ms)
+ GET /admin/lessons/new 200 in 313ms (next.js: 277ms, application-code: 36ms)
+ GET /admin/lessons/new 200 in 26ms (next.js: 1508µs, application-code: 24ms)
+ GET /share/demo 200 in 42ms (next.js: 7ms, application-code: 35ms)
+ GET /admin/lessons/new 200 in 36ms (next.js: 5ms, application-code: 31ms)
+ GET /share/demo 200 in 43ms (next.js: 8ms, application-code: 35ms)
+ GET /admin/lessons/new 200 in 38ms (next.js: 5ms, application-code: 33ms)
+ GET /share/demo 200 in 42ms (next.js: 7ms, application-code: 35ms)
+ GET /admin/lessons/new 200 in 26ms (next.js: 3ms, application-code: 23ms)
+ GET /share/demo 200 in 43ms (next.js: 9ms, application-code: 35ms)
+ GET /admin/lessons/new 200 in 36ms (next.js: 5ms, application-code: 31ms)
+ GET /admin/lessons/new? 200 in 35ms (next.js: 5ms, application-code: 30ms)
+ GET /share/demo 200 in 41ms (next.js: 7ms, application-code: 33ms)
+ GET /admin/lessons/new? 200 in 36ms (next.js: 5ms, application-code: 31ms)
+ GET /share/demo 200 in 37ms (next.js: 5ms, application-code: 32ms)
+ GET /admin/lessons/new? 200 in 33ms (next.js: 4ms, application-code: 29ms)
+ GET /share/demo 200 in 42ms (next.js: 7ms, application-code: 34ms)
+ GET /admin/lessons/new? 200 in 38ms (next.js: 9ms, application-code: 29ms)
+ GET /share/demo 200 in 43ms (next.js: 9ms, application-code: 33ms)
+ GET /admin/lessons/new 200 in 27ms (next.js: 2ms, application-code: 25ms)
+ GET /admin/lessons/new? 200 in 36ms (next.js: 3ms, application-code: 33ms)
+ GET /share/demo 200 in 64ms (next.js: 6ms, application-code: 57ms)
+ GET /admin/lessons/new? 200 in 35ms (next.js: 3ms, application-code: 32ms)
+ GET /share/demo 200 in 45ms (next.js: 8ms, application-code: 37ms)
+ GET /admin/lessons/new? 200 in 36ms (next.js: 6ms, application-code: 31ms)
+ GET /share/demo 200 in 40ms (next.js: 7ms, application-code: 33ms)
+ GET /admin/lessons/new? 200 in 39ms (next.js: 6ms, application-code: 33ms)
+ GET /share/demo 200 in 44ms (next.js: 7ms, application-code: 37ms)
+ GET /admin/lessons/new? 200 in 40ms (next.js: 6ms, application-code: 34ms)
+ GET /admin/lessons/new? 200 in 34ms (next.js: 3ms, application-code: 32ms)
+ GET /share/demo 200 in 42ms (next.js: 8ms, application-code: 33ms)
+ GET /admin/lessons/123/review 200 in 408ms (next.js: 363ms, application-code: 45ms)
+ GET /admin/lessons/new? 200 in 50ms (next.js: 18ms, application-code: 32ms)
+ GET /admin/lessons/new? 200 in 31ms (next.js: 6ms, application-code: 25ms)
+ GET /share/demo 200 in 97ms (next.js: 39ms, application-code: 59ms)
+ GET /admin/lessons/new? 200 in 36ms (next.js: 4ms, application-code: 32ms)
+ GET /share/demo 200 in 36ms (next.js: 6ms, application-code: 29ms)
+ GET /admin/lessons/new? 200 in 106ms (next.js: 45ms, application-code: 61ms)
+ GET /share/demo 200 in 67ms (next.js: 36ms, application-code: 30ms)
+ GET /admin/lessons/new? 200 in 42ms (next.js: 9ms, application-code: 33ms)
+ GET /admin/lessons/new? 200 in 34ms (next.js: 1930µs, application-code: 32ms)
+ GET /share/demo 200 in 41ms (next.js: 8ms, application-code: 33ms)
+ GET /admin/lessons/new? 200 in 31ms (next.js: 5ms, application-code: 26ms)
+ GET /share/demo 200 in 36ms (next.js: 5ms, application-code: 31ms)
+ GET /admin/lessons/new? 200 in 37ms (next.js: 5ms, application-code: 33ms)
+ GET /admin/lessons/new? 200 in 35ms (next.js: 4ms, application-code: 31ms)
+ GET /share/demo 200 in 44ms (next.js: 7ms, application-code: 36ms)
+ GET /admin/lessons/new? 200 in 37ms (next.js: 6ms, application-code: 31ms)
+ GET /share/demo 200 in 24ms (next.js: 1715µs, application-code: 23ms)
+ GET /admin/lessons/new? 200 in 38ms (next.js: 5ms, application-code: 33ms)
+ GET /share/demo 200 in 44ms (next.js: 8ms, application-code: 36ms)
+ GET /admin/lessons/new 200 in 39ms (next.js: 5ms, application-code: 34ms)
+ GET /admin/lessons/new? 200 in 33ms (next.js: 3ms, application-code: 30ms)
+ GET /share/demo 200 in 44ms (next.js: 8ms, application-code: 36ms)
+[browser] GoTrueClient@sb-placeholder-auth-token:1 (2.103.2) 2026-04-16T23:42:58.971Z Multiple GoTrueClient instances detected in the same browser context. It is not an error, but this should be avoided as it may produce undefined behavior when used concurrently under the same storage key. (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_115brz8._.js:2431:13)
+[browser] [score] 파일 업로드 실패 (레슨일지.jpg): StorageUnknownError: Failed to fetch
+    at handleError (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_0qhis87._.js:12685:19)
+    at <unknown> (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_0qhis87._.js:12738:55) (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/src_0fj0r1g._.js:46:21)
+[browser] Error: [score] 파일 업로드 중 오류가 발생했습니다: Failed to fetch
+    at uploadMaterials (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/src_0fj0r1g._.js:47:19)
+    at async handleUploadAndSave (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/src_0fj0r1g._.js:132:64) (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/src_0fj0r1g._.js:152:21)
+ GET /admin/lessons/new? 200 in 34ms (next.js: 4ms, application-code: 30ms)
+ GET /share/demo 200 in 41ms (next.js: 8ms, application-code: 34ms)
+ GET /admin/lessons/new? 200 in 38ms (next.js: 5ms, application-code: 33ms)
+ GET /share/demo 200 in 38ms (next.js: 8ms, application-code: 30ms)
+ GET /admin/lessons/new? 200 in 42ms (next.js: 5ms, application-code: 36ms)
+ GET /share/demo 200 in 36ms (next.js: 3ms, application-code: 33ms)
+ GET /share/demo 200 in 42ms (next.js: 7ms, application-code: 35ms)
+ GET /admin/lessons/new? 200 in 37ms (next.js: 4ms, application-code: 33ms)
+ GET /share/demo 200 in 43ms (next.js: 8ms, application-code: 36ms)
+ GET /admin/lessons/new? 200 in 39ms (next.js: 5ms, application-code: 33ms)
+ GET /share/demo 200 in 41ms (next.js: 8ms, application-code: 33ms)
+ GET /admin/lessons/new? 200 in 40ms (next.js: 6ms, application-code: 34ms)
+ GET /share/demo 200 in 44ms (next.js: 7ms, application-code: 37ms)
+ GET /admin/lessons/new? 200 in 39ms (next.js: 4ms, application-code: 36ms)
+ GET /admin/lessons/new? 200 in 29ms (next.js: 1778µs, application-code: 27ms)
+ GET /share/demo 200 in 71ms (next.js: 6ms, application-code: 65ms)
+ GET /admin/lessons/new? 200 in 36ms (next.js: 3ms, application-code: 33ms)
+ GET /share/demo 200 in 34ms (next.js: 3ms, application-code: 30ms)
+ GET /admin/lessons/new? 200 in 38ms (next.js: 7ms, application-code: 32ms)
+ GET /share/demo 200 in 40ms (next.js: 7ms, application-code: 33ms)
+ GET /admin/lessons/new? 200 in 31ms (next.js: 4ms, application-code: 27ms)
+ GET /admin/lessons/new? 200 in 39ms (next.js: 6ms, application-code: 34ms)
+ GET /share/demo 200 in 40ms (next.js: 7ms, application-code: 33ms)
+ GET /admin/lessons/new? 200 in 41ms (next.js: 6ms, application-code: 34ms)
+ GET /share/demo 200 in 41ms (next.js: 7ms, application-code: 34ms)
+ GET /admin/lessons/new? 200 in 37ms (next.js: 3ms, application-code: 34ms)
+ GET /share/demo 200 in 44ms (next.js: 6ms, application-code: 38ms)
+ GET /admin/lessons/new? 200 in 39ms (next.js: 3ms, application-code: 36ms)
+ GET /share/demo 200 in 43ms (next.js: 6ms, application-code: 37ms)
+ GET /share/demo 200 in 44ms (next.js: 8ms, application-code: 36ms)
+ GET /admin/lessons/new? 200 in 39ms (next.js: 5ms, application-code: 34ms)
+ GET /share/demo 200 in 44ms (next.js: 7ms, application-code: 37ms)
+ GET /admin/lessons/new? 200 in 38ms (next.js: 5ms, application-code: 33ms)
+ GET /share/demo 200 in 46ms (next.js: 8ms, application-code: 37ms)
+ GET /admin/lessons/new? 200 in 40ms (next.js: 6ms, application-code: 34ms)
+ GET /share/demo 200 in 42ms (next.js: 7ms, application-code: 35ms)
+ GET /admin/lessons/new? 200 in 36ms (next.js: 3ms, application-code: 33ms)
+ GET /share/demo 200 in 43ms (next.js: 6ms, application-code: 37ms)
+ GET /admin/lessons/new? 200 in 37ms (next.js: 4ms, application-code: 34ms)
+ GET /share/demo 200 in 43ms (next.js: 6ms, application-code: 36ms)
+ GET /admin/lessons/new? 200 in 37ms (next.js: 3ms, application-code: 33ms)
+ GET /share/demo 200 in 50ms (next.js: 5ms, application-code: 44ms)
+ GET /admin/lessons/new? 200 in 41ms (next.js: 6ms, application-code: 34ms)
+ GET /share/demo 200 in 42ms (next.js: 7ms, application-code: 35ms)
+ GET /admin/lessons/new? 200 in 41ms (next.js: 4ms, application-code: 37ms)
+ GET /share/demo 200 in 43ms (next.js: 6ms, application-code: 37ms)
+  Reload env: .env.local
+✓ Compiled in 22ms
+ GET /admin/lessons/new 200 in 68ms (next.js: 39ms, application-code: 28ms)
+ GET /admin/lessons/new 200 in 12ms (next.js: 920µs, application-code: 11ms)
+✓ Compiled in 0ms
+ GET /admin/lessons/new? 200 in 71ms (next.js: 1242µs, application-code: 70ms)
+ GET /share/demo 200 in 78ms (next.js: 43ms, application-code: 35ms)
+ GET /admin/lessons/new? 200 in 36ms (next.js: 5ms, application-code: 31ms)
+ GET /share/demo 200 in 42ms (next.js: 8ms, application-code: 35ms)
+  Reload env: .env.local
+ GET /admin/lessons/new 200 in 56ms (next.js: 37ms, application-code: 19ms)
+ GET /admin/lessons/new? 200 in 75ms (next.js: 3ms, application-code: 71ms)
+ GET /admin/lessons/new? 200 in 35ms (next.js: 4ms, application-code: 31ms)
+ GET /admin/lessons/new 200 in 31ms (next.js: 3ms, application-code: 28ms)
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/admin/les..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head headCacheNode={{rsc:{...}, ...}}>
+                    <__next_viewport_boundary__>
+                    <MetadataWrapper>
+                      <div
+                        hidden={true}
+-                       style={{user-select:"auto"}}
+                      >
+                    ...
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html
+                          lang="en"
+                          className="geist_a71539c9-module__T19VSG__variable geist_mono_8d43a2aa-module__8Li5zG__varia..."
+-                         style={{user-select:"auto"}}
+                        >
+                          <body
+                            className="min-h-full flex flex-col"
+-                           style={{user-select:"auto"}}
+                          >
+                            ...
+                              <SegmentViewNode type="page" pagePath="admin/less...">
+                                <SegmentTrieNode>
+                                <ClientPageRoot Component={function NewLessonPage} serverProvidedParams={{...}}>
+                                  <NewLessonPage params={Promise} searchParams={Promise}>
+                                    <div
+                                      className="min-h-screen p-6 sm:p-10 bg-gray-50 text-gray-900 font-sans pb-32"
+-                                     style={{user-select:"auto"}}
+                                    >
+                                      <div
+                                        className="max-w-3xl mx-auto"
+-                                       style={{user-select:"auto"}}
+                                      >
+                                        <div
+                                          className="mb-8"
+-                                         style={{user-select:"auto"}}
+                                        >
+                                          <h1
+                                            className="text-2xl font-extrabold tracking-tight"
+-                                           style={{user-select:"auto"}}
+                                          >
++                                           새 레슨 기록 등록
+                                          <p
+                                            className="text-gray-500 mt-1"
+-                                           style={{user-select:"auto"}}
+                                          >
++                                           오늘 진행한 레슨 기록과 피드백 작성을 위한 자료를 올려주세요.
+                                        <form
+                                          onSubmit={function handleUploadAndSave}
+                                          className="space-y-6"
+-                                         style={{user-select:"auto"}}
+                                        >
+                                          <div
+                                            className="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-gray-100"
+-                                           style={{user-select:"auto"}}
+                                          >
+                                            <h2
+                                              className="text-lg font-bold mb-5 flex items-center gap-2 text-gray-800"
+-                                             style={{user-select:"auto"}}
+                                            >
++                                             레슨 기본 정보
+                                            <div
+                                              className="space-y-5"
+-                                             style={{user-select:"auto"}}
+                                            >
+                                              <div
+                                                className="grid grid-cols-1 sm:grid-cols-2 gap-5"
+-                                               style={{user-select:"auto"}}
+                                              >
+                                                <div
+-                                                 style={{user-select:"auto"}}
+                                                >
+                                                  <label
+                                                    className="block text-sm font-semibold mb-1.5 text-gray-700"
+-                                                   style={{user-select:"auto"}}
+                                                  >
+                                                    <span
+                                                      className="text-red-500"
+-                                                     style={{user-select:"auto"}}
+                                                    >
++                                                     *
+                                                  <input
+                                                    type="text"
+                                                    className="w-full bg-gray-50 border border-gray-200 rounded-lg p-3..."
+                                                    value=""
+                                                    onChange={function onChange}
+                                                    required={true}
+                                                    placeholder="예: 김민준"
+-                                                   style={{user-select:"auto"}}
+                                                  >
+                                                <div
+-                                                 style={{user-select:"auto"}}
+                                                >
+                                                  <label
+                                                    className="block text-sm font-semibold mb-1.5 text-gray-700"
+-                                                   style={{user-select:"auto"}}
+                                                  >
+                                                    <span
+                                                      className="text-red-500"
+-                                                     style={{user-select:"auto"}}
+                                                    >
++                                                     *
+                                                  <input
+                                                    type="date"
+                                                    className="w-full bg-gray-50 border border-gray-200 rounded-lg p-3..."
+                                                    value="2026-04-17"
+                                                    onChange={function onChange}
+                                                    required={true}
+-                                                   style={{user-select:"auto"}}
+                                                  >
+                                              <div
+                                                className="grid grid-cols-1 sm:grid-cols-3 gap-5"
+-                                               style={{user-select:"auto"}}
+                                              >
+                                                <div
+-                                                 style={{user-select:"auto"}}
+                                                >
+                                                  <label
+                                                    className="block text-sm font-semibold mb-1.5 text-gray-700"
+-                                                   style={{user-select:"auto"}}
+                                                  >
++                                                   악기
+                                                  <input
+                                                    type="text"
+                                                    className="w-full bg-gray-50 border border-gray-200 rounded-lg p-3..."
+                                                    value=""
+                                                    onChange={function onChange}
+                                                    placeholder="예: 바이올린"
+-                                                   style={{user-select:"auto"}}
+                                                  >
+                                                <div
+-                                                 style={{user-select:"auto"}}
+                                                >
+                                                  <label
+                                                    className="block text-sm font-semibold mb-1.5 text-gray-700"
+-                                                   style={{user-select:"auto"}}
+                                                  >
++                                                   교재 / 단원
+                                                  <input
+                                                    type="text"
+                                                    className="w-full bg-gray-50 border border-gray-200 rounded-lg p-3..."
+                                                    value=""
+                                                    onChange={function onChange}
+                                                    placeholder="예: 스즈키 3권"
+-                                                   style={{user-select:"auto"}}
+                                                  >
+                                                <div
+-                                                 style={{user-select:"auto"}}
+                                                >
+                                                  <label
+                                                    className="block text-sm font-semibold mb-1.5 text-gray-700"
+-                                                   style={{user-select:"auto"}}
+                                                  >
++                                                   곡명
+                                                  <input
+                                                    type="text"
+                                                    className="w-full bg-gray-50 border border-gray-200 rounded-lg p-3..."
+                                                    value=""
+                                                    onChange={function onChange}
+                                                    placeholder="예: 가보트"
+-                                                   style={{user-select:"auto"}}
+                                                  >
+                                          <div
+                                            className="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-gray-100"
+-                                           style={{user-select:"auto"}}
+                                          >
+                                            <h2
+                                              className="text-lg font-bold mb-5 flex items-center gap-2 text-gray-800"
+-                                             style={{user-select:"auto"}}
+                                            >
++                                             레슨 자료 업로드
+                                            <div
+                                              className="space-y-6"
+-                                             style={{user-select:"auto"}}
+                                            >
+                                              <div
+                                                className="bg-gray-50 p-5 border border-gray-200 rounded-xl transition..."
+-                                               style={{user-select:"auto"}}
+                                              >
+                                                <h3
+                                                  className="text-sm font-bold text-gray-800 mb-1 flex items-center gap-2"
+-                                                 style={{user-select:"auto"}}
+                                                >
++                                                 🎼 악보 파일/사진
+                                                <p
+                                                  className="text-xs text-gray-500 mb-3"
+-                                                 style={{user-select:"auto"}}
+                                                >
++                                                 오늘 학습한 악보 원본이나, 학생이 필기한 악보 사진을 올려주세요.
+                                                <input
+                                                  type="file"
+                                                  multiple={true}
+                                                  accept="image/*,application/pdf"
+                                                  className="text-sm block w-full file:mr-4 file:py-2 file:px-4 file:r..."
+                                                  onChange={function onChange}
+-                                                 style={{user-select:"auto"}}
+                                                >
+                                              <div
+                                                className="bg-gray-50 p-5 border border-gray-200 rounded-xl transition..."
+-                                               style={{user-select:"auto"}}
+                                              >
+                                                <h3
+                                                  className="text-sm font-bold text-gray-800 mb-1 flex items-center gap-2"
+-                                                 style={{user-select:"auto"}}
+                                                >
++                                                 👀 학생 연주 영상
+                                                <p
+                                                  className="text-xs text-gray-500 mb-3"
+-                                                 style={{user-select:"auto"}}
+                                                >
++                                                 레슨 중 학생이 연주하는 모습을 촬영한 영상을 올려주세요.
+                                                <input
+                                                  type="file"
+                                                  multiple={true}
+                                                  accept="video/*"
+                                                  className="text-sm block w-full file:mr-4 file:py-2 file:px-4 file:r..."
+                                                  onChange={function onChange}
+-                                                 style={{user-select:"auto"}}
+                                                >
+                                              <div
+                                                className="bg-gray-50 p-5 border border-gray-200 rounded-xl transition..."
+-                                               style={{user-select:"auto"}}
+                                              >
+                                                <h3
+                                                  className="text-sm font-bold text-gray-800 mb-1 flex items-center gap-2"
+-                                                 style={{user-select:"auto"}}
+                                                >
++                                                 🎹 선생님 시범 (영상/음원)
+                                                <p
+                                                  className="text-xs text-gray-500 mb-3"
+-                                                 style={{user-select:"auto"}}
+                                                >
++                                                 선생님이 직접 시범을 보여준 연주 영상이나 설명 음성 파일을 올려주세요.
+                                                <input
+                                                  type="file"
+                                                  multiple={true}
+                                                  accept="video/*,audio/*"
+                                                  className="text-sm block w-full file:mr-4 file:py-2 file:px-4 file:r..."
+                                                  onChange={function onChange}
+-                                                 style={{user-select:"auto"}}
+                                                >
+                                          <div
+                                            className="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-gray-100"
+-                                           style={{user-select:"auto"}}
+                                          >
+                                            <h2
+                                              className="text-lg font-bold mb-5 flex items-center gap-2 text-gray-800"
+-                                             style={{user-select:"auto"}}
+                                            >
++                                             레슨 메모
+                                            <div
+                                              className="space-y-6"
+-                                             style={{user-select:"auto"}}
+                                            >
+                                              <div
+-                                               style={{user-select:"auto"}}
+                                              >
+                                                <label
+                                                  className="block text-sm font-semibold mb-2 text-gray-700"
+-                                                 style={{user-select:"auto"}}
+                                                >
++                                                 강사 관찰 메모 (보관용)
+                                                <textarea
+                                                  className="w-full bg-gray-50 border border-gray-200 rounded-lg p-4 t..."
+                                                  placeholder="학부모나 AI에게는 보이지 않는 선생님만의 순수 관찰 기록입니다. 학생의 진도나 특이사항을 편하게 ..."
+                                                  value=""
+                                                  onChange={function onChange}
+-                                                 style={{user-select:"auto"}}
+                                                >
+                                              <div
+                                                className="bg-indigo-50/50 p-5 rounded-xl border border-indigo-100"
+-                                               style={{user-select:"auto"}}
+                                              >
+                                                <label
+                                                  className="block text-sm font-bold mb-2 text-indigo-900"
+-                                                 style={{user-select:"auto"}}
+                                                >
++                                                 AI 피드백 참고 메모
+                                                <textarea
+                                                  className="w-full bg-white border border-indigo-200 rounded-lg p-4 t..."
+                                                  placeholder="예: 두 번째 줄 마디 셋잇단음표 리듬감이 아주 좋아졌다고 칭찬해주세요. 다음 주에는 스타카토 연습..."
+                                                  value=""
+                                                  onChange={function onChange}
+-                                                 style={{user-select:"auto"}}
+                                                >
+                                                <p
+                                                  className="text-xs text-indigo-600 mt-2 font-medium"
+-                                                 style={{user-select:"auto"}}
+                                                >
++                                                 ※ 작성하신 메모 내용은 AI가 학부모용 레슨 피드백을 작성할 때 반드시 참고하는 핵심 기준이 됩니다.
+                                          <button
+                                            type="submit"
+                                            disabled={false}
+                                            className="w-full font-bold py-4 rounded-xl text-white transition-all text..."
+-                                           style={{user-select:"auto"}}
+                                          >
++                                           레슨 자료 저장 및 분석 준비
+                  ...
+ 
+    at <unknown> (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:3439:25)
+    at runWithFiberInDEV (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:965:74)
+    at emitPendingHydrationWarnings (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:3438:13)
+    at completeWork (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:6885:102)
+    at runWithFiberInDEV (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:965:131)
+    at completeUnitOfWork (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9622:23)
+    at performUnitOfWork (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9557:28)
+    at workLoopConcurrentByScheduler (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9551:58)
+    at renderRootConcurrent (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9534:71)
+    at performWorkOnRoot (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9061:150)
+    at performWorkOnRootViaSchedulerTask (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:10255:9)
+    at MessagePort.performWorkUntilDeadline (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_0rpq4pf._.js:2647:64) (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:3439:25)
+✓ Compiled in 17ms
+[browser] Uncaught ReferenceError: useEffect is not defined
+    at NewLessonPage (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/src_0fj0r1g._.js?id=%255Bproject%255D%252Fsrc%252Fapp%252Fadmin%252Flessons%252Fnew%252Fpage.tsx+%255Bapp-client%255D+%2528ecmascript%2529:34:5)
+    at Object.react_stack_bottom_frame (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:15037:24)
+    at renderWithHooks (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:4620:24)
+    at updateFunctionComponent (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:6081:21)
+    at beginWork (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:6691:24)
+    at runWithFiberInDEV (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:965:74)
+    at performUnitOfWork (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9555:97)
+    at workLoopSync (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9449:40)
+    at renderRootSync (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9433:13)
+    at performWorkOnRoot (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9098:47)
+    at performSyncWorkOnRoot (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:10263:9)
+    at flushSyncWorkAcrossRoots_impl (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:10179:316)
+    at flushSyncWork$1 (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9230:86)
+    at Object.scheduleRefresh (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:299:13)
+    at <unknown> (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_0rpq4pf._.js:391:33)
+    at Set.forEach (<anonymous>)
+    at Object.performReactRefresh (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_0rpq4pf._.js:384:38)
+    at applyUpdate (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_0rpq4pf._.js:878:31)
+    at <unknown> (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_0rpq4pf._.js:886:13)
+    at ClientPageRoot (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_0tt2wve._.js:4461:50)
+[browser] Uncaught ReferenceError: useEffect is not defined
+    at NewLessonPage (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/src_0fj0r1g._.js?id=%255Bproject%255D%252Fsrc%252Fapp%252Fadmin%252Flessons%252Fnew%252Fpage.tsx+%255Bapp-client%255D+%2528ecmascript%2529:34:5)
+    at Object.react_stack_bottom_frame (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:15037:24)
+    at renderWithHooks (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:4620:24)
+    at updateFunctionComponent (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:6081:21)
+    at beginWork (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:6691:24)
+    at runWithFiberInDEV (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:965:74)
+    at performUnitOfWork (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9555:97)
+    at workLoopSync (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9449:40)
+    at renderRootSync (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9433:13)
+    at performWorkOnRoot (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9098:47)
+    at performSyncWorkOnRoot (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:10263:9)
+    at flushSyncWorkAcrossRoots_impl (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:10179:316)
+    at flushSyncWork$1 (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9230:86)
+    at Object.scheduleRefresh (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:299:13)
+    at <unknown> (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_0rpq4pf._.js:391:33)
+    at Set.forEach (<anonymous>)
+    at Object.performReactRefresh (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_0rpq4pf._.js:384:38)
+    at applyUpdate (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_0rpq4pf._.js:878:31)
+    at <unknown> (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_0rpq4pf._.js:886:13)
+    at ClientPageRoot (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_0tt2wve._.js:4461:50)
+⨯ ReferenceError: useEffect is not defined
+    at NewLessonPage (src/app/admin/lessons/new/page.tsx:24:3)
+  22 |
+  23 |   // Hydration 처리가 끝난 직후 오늘 날짜를 클라이언트 브라우저 기준으로 밀어넣습니다.
+> 24 |   useEffect(() => {
+     |   ^
+  25 |     setFormData(prev => ({
+  26 |       ...prev,
+  27 |       lessonDate: new Date().toISOString().split('T')[0] {
+  digest: '970571451'
+}
+ GET /admin/lessons/new 500 in 55ms (next.js: 7ms, application-code: 48ms)
+[browser] Uncaught ReferenceError: useEffect is not defined
+    at NewLessonPage (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/src_0fj0r1g._.js:98:5)
+    at Object.react_stack_bottom_frame (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:15037:24)
+    at renderWithHooks (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:4620:24)
+    at updateFunctionComponent (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:6081:21)
+    at beginWork (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:6691:24)
+    at runWithFiberInDEV (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:965:74)
+    at performUnitOfWork (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9555:97)
+    at workLoopSync (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9449:40)
+    at renderRootSync (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9433:13)
+    at performWorkOnRoot (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9098:47)
+    at performWorkOnRootViaSchedulerTask (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:10255:9)
+    at MessagePort.performWorkUntilDeadline (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_0rpq4pf._.js:2647:64)
+    at ClientPageRoot (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_0tt2wve._.js:4461:50)
+⨯ ReferenceError: useEffect is not defined
+    at NewLessonPage (src/app/admin/lessons/new/page.tsx:24:3)
+  22 |
+  23 |   // Hydration 처리가 끝난 직후 오늘 날짜를 클라이언트 브라우저 기준으로 밀어넣습니다.
+> 24 |   useEffect(() => {
+     |   ^
+  25 |     setFormData(prev => ({
+  26 |       ...prev,
+  27 |       lessonDate: new Date().toISOString().split('T')[0] {
+  digest: '970571451'
+}
+ GET /admin/lessons/new 500 in 34ms (next.js: 1388µs, application-code: 33ms)
+[browser] Uncaught ReferenceError: useEffect is not defined
+    at NewLessonPage (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/src_0fj0r1g._.js:98:5)
+    at Object.react_stack_bottom_frame (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:15037:24)
+    at renderWithHooks (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:4620:24)
+    at updateFunctionComponent (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:6081:21)
+    at beginWork (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:6691:24)
+    at runWithFiberInDEV (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:965:74)
+    at performUnitOfWork (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9555:97)
+    at workLoopSync (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9449:40)
+    at renderRootSync (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9433:13)
+    at performWorkOnRoot (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9098:47)
+    at performWorkOnRootViaSchedulerTask (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:10255:9)
+    at MessagePort.performWorkUntilDeadline (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_0rpq4pf._.js:2647:64)
+    at ClientPageRoot (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_0tt2wve._.js:4461:50)
+⚠ Fast Refresh had to perform a full reload due to a runtime error.
+⚠ Fast Refresh had to perform a full reload due to a runtime error.
+✓ Compiled in 18ms
+ GET /admin/lessons/new 200 in 70ms (next.js: 4ms, application-code: 66ms)
+ GET /admin/lessons/new 200 in 52ms (next.js: 1679µs, application-code: 50ms)
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/admin/les..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head headCacheNode={{rsc:{...}, ...}}>
+                    <__next_viewport_boundary__>
+                    <MetadataWrapper>
+                      <div
+                        hidden={true}
+-                       style={{user-select:"auto"}}
+                      >
+                    ...
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html
+                          lang="en"
+                          className="geist_a71539c9-module__T19VSG__variable geist_mono_8d43a2aa-module__8Li5zG__varia..."
+-                         style={{user-select:"auto"}}
+                        >
+                          <body
+                            className="min-h-full flex flex-col"
+-                           style={{user-select:"auto"}}
+                          >
+                            ...
+                              <SegmentViewNode type="page" pagePath="admin/less...">
+                                <SegmentTrieNode>
+                                <ClientPageRoot Component={function NewLessonPage} serverProvidedParams={{...}}>
+                                  <NewLessonPage params={Promise} searchParams={Promise}>
+                                    <div
+                                      className="min-h-screen p-6 sm:p-10 bg-gray-50 text-gray-900 font-sans pb-32"
+-                                     style={{user-select:"auto"}}
+                                    >
+                                      <div
+                                        className="max-w-3xl mx-auto"
+-                                       style={{user-select:"auto"}}
+                                      >
+                                        <div
+                                          className="mb-8"
+-                                         style={{user-select:"auto"}}
+                                        >
+                                          <h1
+                                            className="text-2xl font-extrabold tracking-tight"
+-                                           style={{user-select:"auto"}}
+                                          >
++                                           새 레슨 기록 등록
+                                          <p
+                                            className="text-gray-500 mt-1"
+-                                           style={{user-select:"auto"}}
+                                          >
++                                           오늘 진행한 레슨 기록과 피드백 작성을 위한 자료를 올려주세요.
+                                        <form
+                                          onSubmit={function handleUploadAndSave}
+                                          className="space-y-6"
+-                                         style={{user-select:"auto"}}
+                                        >
+                                          <div
+                                            className="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-gray-100"
+-                                           style={{user-select:"auto"}}
+                                          >
+                                            <h2
+                                              className="text-lg font-bold mb-5 flex items-center gap-2 text-gray-800"
+-                                             style={{user-select:"auto"}}
+                                            >
++                                             레슨 기본 정보
+                                            <div
+                                              className="space-y-5"
+-                                             style={{user-select:"auto"}}
+                                            >
+                                              <div
+                                                className="grid grid-cols-1 sm:grid-cols-2 gap-5"
+-                                               style={{user-select:"auto"}}
+                                              >
+                                                <div
+-                                                 style={{user-select:"auto"}}
+                                                >
+                                                  <label
+                                                    className="block text-sm font-semibold mb-1.5 text-gray-700"
+-                                                   style={{user-select:"auto"}}
+                                                  >
+                                                    <span
+                                                      className="text-red-500"
+-                                                     style={{user-select:"auto"}}
+                                                    >
++                                                     *
+                                                  <input
+                                                    type="text"
+                                                    className="w-full bg-gray-50 border border-gray-200 rounded-lg p-3..."
+                                                    value=""
+                                                    onChange={function onChange}
+                                                    required={true}
+                                                    placeholder="예: 김민준"
+-                                                   style={{user-select:"auto"}}
+                                                  >
+                                                <div
+-                                                 style={{user-select:"auto"}}
+                                                >
+                                                  <label
+                                                    className="block text-sm font-semibold mb-1.5 text-gray-700"
+-                                                   style={{user-select:"auto"}}
+                                                  >
+                                                    <span
+                                                      className="text-red-500"
+-                                                     style={{user-select:"auto"}}
+                                                    >
++                                                     *
+                                                  <input
+                                                    type="date"
+                                                    className="w-full bg-gray-50 border border-gray-200 rounded-lg p-3..."
+                                                    value=""
+                                                    onChange={function onChange}
+                                                    required={true}
+-                                                   style={{user-select:"auto"}}
+                                                  >
+                                              <div
+                                                className="grid grid-cols-1 sm:grid-cols-3 gap-5"
+-                                               style={{user-select:"auto"}}
+                                              >
+                                                <div
+-                                                 style={{user-select:"auto"}}
+                                                >
+                                                  <label
+                                                    className="block text-sm font-semibold mb-1.5 text-gray-700"
+-                                                   style={{user-select:"auto"}}
+                                                  >
++                                                   악기
+                                                  <input
+                                                    type="text"
+                                                    className="w-full bg-gray-50 border border-gray-200 rounded-lg p-3..."
+                                                    value=""
+                                                    onChange={function onChange}
+                                                    placeholder="예: 바이올린"
+-                                                   style={{user-select:"auto"}}
+                                                  >
+                                                <div
+-                                                 style={{user-select:"auto"}}
+                                                >
+                                                  <label
+                                                    className="block text-sm font-semibold mb-1.5 text-gray-700"
+-                                                   style={{user-select:"auto"}}
+                                                  >
++                                                   교재 / 단원
+                                                  <input
+                                                    type="text"
+                                                    className="w-full bg-gray-50 border border-gray-200 rounded-lg p-3..."
+                                                    value=""
+                                                    onChange={function onChange}
+                                                    placeholder="예: 스즈키 3권"
+-                                                   style={{user-select:"auto"}}
+                                                  >
+                                                <div
+-                                                 style={{user-select:"auto"}}
+                                                >
+                                                  <label
+                                                    className="block text-sm font-semibold mb-1.5 text-gray-700"
+-                                                   style={{user-select:"auto"}}
+                                                  >
++                                                   곡명
+                                                  <input
+                                                    type="text"
+                                                    className="w-full bg-gray-50 border border-gray-200 rounded-lg p-3..."
+                                                    value=""
+                                                    onChange={function onChange}
+                                                    placeholder="예: 가보트"
+-                                                   style={{user-select:"auto"}}
+                                                  >
+                                          <div
+                                            className="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-gray-100"
+-                                           style={{user-select:"auto"}}
+                                          >
+                                            <h2
+                                              className="text-lg font-bold mb-5 flex items-center gap-2 text-gray-800"
+-                                             style={{user-select:"auto"}}
+                                            >
++                                             레슨 자료 업로드
+                                            <div
+                                              className="space-y-6"
+-                                             style={{user-select:"auto"}}
+                                            >
+                                              <div
+                                                className="bg-gray-50 p-5 border border-gray-200 rounded-xl transition..."
+-                                               style={{user-select:"auto"}}
+                                              >
+                                                <h3
+                                                  className="text-sm font-bold text-gray-800 mb-1 flex items-center gap-2"
+-                                                 style={{user-select:"auto"}}
+                                                >
++                                                 🎼 악보 파일/사진
+                                                <p
+                                                  className="text-xs text-gray-500 mb-3"
+-                                                 style={{user-select:"auto"}}
+                                                >
++                                                 오늘 학습한 악보 원본이나, 학생이 필기한 악보 사진을 올려주세요.
+                                                <input
+                                                  type="file"
+                                                  multiple={true}
+                                                  accept="image/*,application/pdf"
+                                                  className="text-sm block w-full file:mr-4 file:py-2 file:px-4 file:r..."
+                                                  onChange={function onChange}
+-                                                 style={{user-select:"auto"}}
+                                                >
+                                              <div
+                                                className="bg-gray-50 p-5 border border-gray-200 rounded-xl transition..."
+-                                               style={{user-select:"auto"}}
+                                              >
+                                                <h3
+                                                  className="text-sm font-bold text-gray-800 mb-1 flex items-center gap-2"
+-                                                 style={{user-select:"auto"}}
+                                                >
++                                                 👀 학생 연주 영상
+                                                <p
+                                                  className="text-xs text-gray-500 mb-3"
+-                                                 style={{user-select:"auto"}}
+                                                >
++                                                 레슨 중 학생이 연주하는 모습을 촬영한 영상을 올려주세요.
+                                                <input
+                                                  type="file"
+                                                  multiple={true}
+                                                  accept="video/*"
+                                                  className="text-sm block w-full file:mr-4 file:py-2 file:px-4 file:r..."
+                                                  onChange={function onChange}
+-                                                 style={{user-select:"auto"}}
+                                                >
+                                              <div
+                                                className="bg-gray-50 p-5 border border-gray-200 rounded-xl transition..."
+-                                               style={{user-select:"auto"}}
+                                              >
+                                                <h3
+                                                  className="text-sm font-bold text-gray-800 mb-1 flex items-center gap-2"
+-                                                 style={{user-select:"auto"}}
+                                                >
++                                                 🎹 선생님 시범 (영상/음원)
+                                                <p
+                                                  className="text-xs text-gray-500 mb-3"
+-                                                 style={{user-select:"auto"}}
+                                                >
++                                                 선생님이 직접 시범을 보여준 연주 영상이나 설명 음성 파일을 올려주세요.
+                                                <input
+                                                  type="file"
+                                                  multiple={true}
+                                                  accept="video/*,audio/*"
+                                                  className="text-sm block w-full file:mr-4 file:py-2 file:px-4 file:r..."
+                                                  onChange={function onChange}
+-                                                 style={{user-select:"auto"}}
+                                                >
+                                          <div
+                                            className="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-gray-100"
+-                                           style={{user-select:"auto"}}
+                                          >
+                                            <h2
+                                              className="text-lg font-bold mb-5 flex items-center gap-2 text-gray-800"
+-                                             style={{user-select:"auto"}}
+                                            >
++                                             레슨 메모
+                                            <div
+                                              className="space-y-6"
+-                                             style={{user-select:"auto"}}
+                                            >
+                                              <div
+-                                               style={{user-select:"auto"}}
+                                              >
+                                                <label
+                                                  className="block text-sm font-semibold mb-2 text-gray-700"
+-                                                 style={{user-select:"auto"}}
+                                                >
++                                                 강사 관찰 메모 (보관용)
+                                                <textarea
+                                                  className="w-full bg-gray-50 border border-gray-200 rounded-lg p-4 t..."
+                                                  placeholder="학부모나 AI에게는 보이지 않는 선생님만의 순수 관찰 기록입니다. 학생의 진도나 특이사항을 편하게 ..."
+                                                  value=""
+                                                  onChange={function onChange}
+-                                                 style={{user-select:"auto"}}
+                                                >
+                                              <div
+                                                className="bg-indigo-50/50 p-5 rounded-xl border border-indigo-100"
+-                                               style={{user-select:"auto"}}
+                                              >
+                                                <label
+                                                  className="block text-sm font-bold mb-2 text-indigo-900"
+-                                                 style={{user-select:"auto"}}
+                                                >
++                                                 AI 피드백 참고 메모
+                                                <textarea
+                                                  className="w-full bg-white border border-indigo-200 rounded-lg p-4 t..."
+                                                  placeholder="예: 두 번째 줄 마디 셋잇단음표 리듬감이 아주 좋아졌다고 칭찬해주세요. 다음 주에는 스타카토 연습..."
+                                                  value=""
+                                                  onChange={function onChange}
+-                                                 style={{user-select:"auto"}}
+                                                >
+                                                <p
+                                                  className="text-xs text-indigo-600 mt-2 font-medium"
+-                                                 style={{user-select:"auto"}}
+                                                >
++                                                 ※ 작성하신 메모 내용은 AI가 학부모용 레슨 피드백을 작성할 때 반드시 참고하는 핵심 기준이 됩니다.
+                                          <button
+                                            type="submit"
+                                            disabled={false}
+                                            className="w-full font-bold py-4 rounded-xl text-white transition-all text..."
+-                                           style={{user-select:"auto"}}
+                                          >
++                                           레슨 자료 저장 및 분석 준비
+                  ...
+ 
+    at <unknown> (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:3439:25)
+    at runWithFiberInDEV (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:965:74)
+    at emitPendingHydrationWarnings (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:3438:13)
+    at completeWork (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:6885:102)
+    at runWithFiberInDEV (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:965:131)
+    at completeUnitOfWork (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9622:23)
+    at performUnitOfWork (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9557:28)
+    at workLoopConcurrentByScheduler (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9551:58)
+    at renderRootConcurrent (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9534:71)
+    at performWorkOnRoot (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9061:150)
+    at performWorkOnRootViaSchedulerTask (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:10255:9)
+    at MessagePort.performWorkUntilDeadline (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_0rpq4pf._.js:2647:64) (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:3439:25)
+ GET /admin/lessons/new 200 in 37ms (next.js: 3ms, application-code: 34ms)
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/admin/les..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head headCacheNode={{rsc:{...}, ...}}>
+                    <__next_viewport_boundary__>
+                    <MetadataWrapper>
+                      <div
+                        hidden={true}
+-                       style={{user-select:"auto"}}
+                      >
+                    ...
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html
+                          lang="en"
+                          className="geist_a71539c9-module__T19VSG__variable geist_mono_8d43a2aa-module__8Li5zG__varia..."
+-                         style={{user-select:"auto"}}
+                        >
+                          <body
+                            className="min-h-full flex flex-col"
+-                           style={{user-select:"auto"}}
+                          >
+                            ...
+                              <SegmentViewNode type="page" pagePath="admin/less...">
+                                <SegmentTrieNode>
+                                <ClientPageRoot Component={function NewLessonPage} serverProvidedParams={{...}}>
+                                  <NewLessonPage params={Promise} searchParams={Promise}>
+                                    <div
+                                      className="min-h-screen p-6 sm:p-10 bg-gray-50 text-gray-900 font-sans pb-32"
+-                                     style={{user-select:"auto"}}
+                                    >
+                                      <div
+                                        className="max-w-3xl mx-auto"
+-                                       style={{user-select:"auto"}}
+                                      >
+                                        <div
+                                          className="mb-8"
+-                                         style={{user-select:"auto"}}
+                                        >
+                                          <h1
+                                            className="text-2xl font-extrabold tracking-tight"
+-                                           style={{user-select:"auto"}}
+                                          >
++                                           새 레슨 기록 등록
+                                          <p
+                                            className="text-gray-500 mt-1"
+-                                           style={{user-select:"auto"}}
+                                          >
++                                           오늘 진행한 레슨 기록과 피드백 작성을 위한 자료를 올려주세요.
+                                        <form
+                                          onSubmit={function handleUploadAndSave}
+                                          className="space-y-6"
+-                                         style={{user-select:"auto"}}
+                                        >
+                                          <div
+                                            className="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-gray-100"
+-                                           style={{user-select:"auto"}}
+                                          >
+                                            <h2
+                                              className="text-lg font-bold mb-5 flex items-center gap-2 text-gray-800"
+-                                             style={{user-select:"auto"}}
+                                            >
++                                             레슨 기본 정보
+                                            <div
+                                              className="space-y-5"
+-                                             style={{user-select:"auto"}}
+                                            >
+                                              <div
+                                                className="grid grid-cols-1 sm:grid-cols-2 gap-5"
+-                                               style={{user-select:"auto"}}
+                                              >
+                                                <div
+-                                                 style={{user-select:"auto"}}
+                                                >
+                                                  <label
+                                                    className="block text-sm font-semibold mb-1.5 text-gray-700"
+-                                                   style={{user-select:"auto"}}
+                                                  >
+                                                    <span
+                                                      className="text-red-500"
+-                                                     style={{user-select:"auto"}}
+                                                    >
++                                                     *
+                                                  <input
+                                                    type="text"
+                                                    className="w-full bg-gray-50 border border-gray-200 rounded-lg p-3..."
+                                                    value=""
+                                                    onChange={function onChange}
+                                                    required={true}
+                                                    placeholder="예: 김민준"
+-                                                   style={{user-select:"auto"}}
+                                                  >
+                                                <div
+-                                                 style={{user-select:"auto"}}
+                                                >
+                                                  <label
+                                                    className="block text-sm font-semibold mb-1.5 text-gray-700"
+-                                                   style={{user-select:"auto"}}
+                                                  >
+                                                    <span
+                                                      className="text-red-500"
+-                                                     style={{user-select:"auto"}}
+                                                    >
++                                                     *
+                                                  <input
+                                                    type="date"
+                                                    className="w-full bg-gray-50 border border-gray-200 rounded-lg p-3..."
+                                                    value=""
+                                                    onChange={function onChange}
+                                                    required={true}
+-                                                   style={{user-select:"auto"}}
+                                                  >
+                                              <div
+                                                className="grid grid-cols-1 sm:grid-cols-3 gap-5"
+-                                               style={{user-select:"auto"}}
+                                              >
+                                                <div
+-                                                 style={{user-select:"auto"}}
+                                                >
+                                                  <label
+                                                    className="block text-sm font-semibold mb-1.5 text-gray-700"
+-                                                   style={{user-select:"auto"}}
+                                                  >
++                                                   악기
+                                                  <input
+                                                    type="text"
+                                                    className="w-full bg-gray-50 border border-gray-200 rounded-lg p-3..."
+                                                    value=""
+                                                    onChange={function onChange}
+                                                    placeholder="예: 바이올린"
+-                                                   style={{user-select:"auto"}}
+                                                  >
+                                                <div
+-                                                 style={{user-select:"auto"}}
+                                                >
+                                                  <label
+                                                    className="block text-sm font-semibold mb-1.5 text-gray-700"
+-                                                   style={{user-select:"auto"}}
+                                                  >
++                                                   교재 / 단원
+                                                  <input
+                                                    type="text"
+                                                    className="w-full bg-gray-50 border border-gray-200 rounded-lg p-3..."
+                                                    value=""
+                                                    onChange={function onChange}
+                                                    placeholder="예: 스즈키 3권"
+-                                                   style={{user-select:"auto"}}
+                                                  >
+                                                <div
+-                                                 style={{user-select:"auto"}}
+                                                >
+                                                  <label
+                                                    className="block text-sm font-semibold mb-1.5 text-gray-700"
+-                                                   style={{user-select:"auto"}}
+                                                  >
++                                                   곡명
+                                                  <input
+                                                    type="text"
+                                                    className="w-full bg-gray-50 border border-gray-200 rounded-lg p-3..."
+                                                    value=""
+                                                    onChange={function onChange}
+                                                    placeholder="예: 가보트"
+-                                                   style={{user-select:"auto"}}
+                                                  >
+                                          <div
+                                            className="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-gray-100"
+-                                           style={{user-select:"auto"}}
+                                          >
+                                            <h2
+                                              className="text-lg font-bold mb-5 flex items-center gap-2 text-gray-800"
+-                                             style={{user-select:"auto"}}
+                                            >
++                                             레슨 자료 업로드
+                                            <div
+                                              className="space-y-6"
+-                                             style={{user-select:"auto"}}
+                                            >
+                                              <div
+                                                className="bg-gray-50 p-5 border border-gray-200 rounded-xl transition..."
+-                                               style={{user-select:"auto"}}
+                                              >
+                                                <h3
+                                                  className="text-sm font-bold text-gray-800 mb-1 flex items-center gap-2"
+-                                                 style={{user-select:"auto"}}
+                                                >
++                                                 🎼 악보 파일/사진
+                                                <p
+                                                  className="text-xs text-gray-500 mb-3"
+-                                                 style={{user-select:"auto"}}
+                                                >
++                                                 오늘 학습한 악보 원본이나, 학생이 필기한 악보 사진을 올려주세요.
+                                                <input
+                                                  type="file"
+                                                  multiple={true}
+                                                  accept="image/*,application/pdf"
+                                                  className="text-sm block w-full file:mr-4 file:py-2 file:px-4 file:r..."
+                                                  onChange={function onChange}
+-                                                 style={{user-select:"auto"}}
+                                                >
+                                              <div
+                                                className="bg-gray-50 p-5 border border-gray-200 rounded-xl transition..."
+-                                               style={{user-select:"auto"}}
+                                              >
+                                                <h3
+                                                  className="text-sm font-bold text-gray-800 mb-1 flex items-center gap-2"
+-                                                 style={{user-select:"auto"}}
+                                                >
++                                                 👀 학생 연주 영상
+                                                <p
+                                                  className="text-xs text-gray-500 mb-3"
+-                                                 style={{user-select:"auto"}}
+                                                >
++                                                 레슨 중 학생이 연주하는 모습을 촬영한 영상을 올려주세요.
+                                                <input
+                                                  type="file"
+                                                  multiple={true}
+                                                  accept="video/*"
+                                                  className="text-sm block w-full file:mr-4 file:py-2 file:px-4 file:r..."
+                                                  onChange={function onChange}
+-                                                 style={{user-select:"auto"}}
+                                                >
+                                              <div
+                                                className="bg-gray-50 p-5 border border-gray-200 rounded-xl transition..."
+-                                               style={{user-select:"auto"}}
+                                              >
+                                                <h3
+                                                  className="text-sm font-bold text-gray-800 mb-1 flex items-center gap-2"
+-                                                 style={{user-select:"auto"}}
+                                                >
++                                                 🎹 선생님 시범 (영상/음원)
+                                                <p
+                                                  className="text-xs text-gray-500 mb-3"
+-                                                 style={{user-select:"auto"}}
+                                                >
++                                                 선생님이 직접 시범을 보여준 연주 영상이나 설명 음성 파일을 올려주세요.
+                                                <input
+                                                  type="file"
+                                                  multiple={true}
+                                                  accept="video/*,audio/*"
+                                                  className="text-sm block w-full file:mr-4 file:py-2 file:px-4 file:r..."
+                                                  onChange={function onChange}
+-                                                 style={{user-select:"auto"}}
+                                                >
+                                          <div
+                                            className="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-gray-100"
+-                                           style={{user-select:"auto"}}
+                                          >
+                                            <h2
+                                              className="text-lg font-bold mb-5 flex items-center gap-2 text-gray-800"
+-                                             style={{user-select:"auto"}}
+                                            >
++                                             레슨 메모
+                                            <div
+                                              className="space-y-6"
+-                                             style={{user-select:"auto"}}
+                                            >
+                                              <div
+-                                               style={{user-select:"auto"}}
+                                              >
+                                                <label
+                                                  className="block text-sm font-semibold mb-2 text-gray-700"
+-                                                 style={{user-select:"auto"}}
+                                                >
++                                                 강사 관찰 메모 (보관용)
+                                                <textarea
+                                                  className="w-full bg-gray-50 border border-gray-200 rounded-lg p-4 t..."
+                                                  placeholder="학부모나 AI에게는 보이지 않는 선생님만의 순수 관찰 기록입니다. 학생의 진도나 특이사항을 편하게 ..."
+                                                  value=""
+                                                  onChange={function onChange}
+-                                                 style={{user-select:"auto"}}
+                                                >
+                                              <div
+                                                className="bg-indigo-50/50 p-5 rounded-xl border border-indigo-100"
+-                                               style={{user-select:"auto"}}
+                                              >
+                                                <label
+                                                  className="block text-sm font-bold mb-2 text-indigo-900"
+-                                                 style={{user-select:"auto"}}
+                                                >
++                                                 AI 피드백 참고 메모
+                                                <textarea
+                                                  className="w-full bg-white border border-indigo-200 rounded-lg p-4 t..."
+                                                  placeholder="예: 두 번째 줄 마디 셋잇단음표 리듬감이 아주 좋아졌다고 칭찬해주세요. 다음 주에는 스타카토 연습..."
+                                                  value=""
+                                                  onChange={function onChange}
+-                                                 style={{user-select:"auto"}}
+                                                >
+                                                <p
+                                                  className="text-xs text-indigo-600 mt-2 font-medium"
+-                                                 style={{user-select:"auto"}}
+                                                >
++                                                 ※ 작성하신 메모 내용은 AI가 학부모용 레슨 피드백을 작성할 때 반드시 참고하는 핵심 기준이 됩니다.
+                                          <button
+                                            type="submit"
+                                            disabled={false}
+                                            className="w-full font-bold py-4 rounded-xl text-white transition-all text..."
+-                                           style={{user-select:"auto"}}
+                                          >
++                                           레슨 자료 저장 및 분석 준비
+                  ...
+ 
+    at <unknown> (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:3439:25)
+    at runWithFiberInDEV (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:965:74)
+    at emitPendingHydrationWarnings (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:3438:13)
+    at completeWork (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:6885:102)
+    at runWithFiberInDEV (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:965:131)
+    at completeUnitOfWork (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9622:23)
+    at performUnitOfWork (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9557:28)
+    at workLoopConcurrentByScheduler (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9551:58)
+    at renderRootConcurrent (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9534:71)
+    at performWorkOnRoot (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9061:150)
+    at performWorkOnRootViaSchedulerTask (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:10255:9)
+    at MessagePort.performWorkUntilDeadline (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_0rpq4pf._.js:2647:64) (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:3439:25)
+ GET /admin/lessons/new 200 in 32ms (next.js: 2ms, application-code: 30ms)
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/admin/les..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head headCacheNode={{rsc:{...}, ...}}>
+                    <__next_viewport_boundary__>
+                    <MetadataWrapper>
+                      <div
+                        hidden={true}
+-                       style={{user-select:"auto"}}
+                      >
+                    ...
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html
+                          lang="en"
+                          className="geist_a71539c9-module__T19VSG__variable geist_mono_8d43a2aa-module__8Li5zG__varia..."
+-                         style={{user-select:"auto"}}
+                        >
+                          <body
+                            className="min-h-full flex flex-col"
+-                           style={{user-select:"auto"}}
+                          >
+                            ...
+                              <SegmentViewNode type="page" pagePath="admin/less...">
+                                <SegmentTrieNode>
+                                <ClientPageRoot Component={function NewLessonPage} serverProvidedParams={{...}}>
+                                  <NewLessonPage params={Promise} searchParams={Promise}>
+                                    <div
+                                      className="min-h-screen p-6 sm:p-10 bg-gray-50 text-gray-900 font-sans pb-32"
+-                                     style={{user-select:"auto"}}
+                                    >
+                                      <div
+                                        className="max-w-3xl mx-auto"
+-                                       style={{user-select:"auto"}}
+                                      >
+                                        <div
+                                          className="mb-8"
+-                                         style={{user-select:"auto"}}
+                                        >
+                                          <h1
+                                            className="text-2xl font-extrabold tracking-tight"
+-                                           style={{user-select:"auto"}}
+                                          >
++                                           새 레슨 기록 등록
+                                          <p
+                                            className="text-gray-500 mt-1"
+-                                           style={{user-select:"auto"}}
+                                          >
++                                           오늘 진행한 레슨 기록과 피드백 작성을 위한 자료를 올려주세요.
+                                        <form
+                                          onSubmit={function handleUploadAndSave}
+                                          className="space-y-6"
+-                                         style={{user-select:"auto"}}
+                                        >
+                                          <div
+                                            className="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-gray-100"
+-                                           style={{user-select:"auto"}}
+                                          >
+                                            <h2
+                                              className="text-lg font-bold mb-5 flex items-center gap-2 text-gray-800"
+-                                             style={{user-select:"auto"}}
+                                            >
++                                             레슨 기본 정보
+                                            <div
+                                              className="space-y-5"
+-                                             style={{user-select:"auto"}}
+                                            >
+                                              <div
+                                                className="grid grid-cols-1 sm:grid-cols-2 gap-5"
+-                                               style={{user-select:"auto"}}
+                                              >
+                                                <div
+-                                                 style={{user-select:"auto"}}
+                                                >
+                                                  <label
+                                                    className="block text-sm font-semibold mb-1.5 text-gray-700"
+-                                                   style={{user-select:"auto"}}
+                                                  >
+                                                    <span
+                                                      className="text-red-500"
+-                                                     style={{user-select:"auto"}}
+                                                    >
++                                                     *
+                                                  <input
+                                                    type="text"
+                                                    className="w-full bg-gray-50 border border-gray-200 rounded-lg p-3..."
+                                                    value=""
+                                                    onChange={function onChange}
+                                                    required={true}
+                                                    placeholder="예: 김민준"
+-                                                   style={{user-select:"auto"}}
+                                                  >
+                                                <div
+-                                                 style={{user-select:"auto"}}
+                                                >
+                                                  <label
+                                                    className="block text-sm font-semibold mb-1.5 text-gray-700"
+-                                                   style={{user-select:"auto"}}
+                                                  >
+                                                    <span
+                                                      className="text-red-500"
+-                                                     style={{user-select:"auto"}}
+                                                    >
++                                                     *
+                                                  <input
+                                                    type="date"
+                                                    className="w-full bg-gray-50 border border-gray-200 rounded-lg p-3..."
+                                                    value=""
+                                                    onChange={function onChange}
+                                                    required={true}
+-                                                   style={{user-select:"auto"}}
+                                                  >
+                                              <div
+                                                className="grid grid-cols-1 sm:grid-cols-3 gap-5"
+-                                               style={{user-select:"auto"}}
+                                              >
+                                                <div
+-                                                 style={{user-select:"auto"}}
+                                                >
+                                                  <label
+                                                    className="block text-sm font-semibold mb-1.5 text-gray-700"
+-                                                   style={{user-select:"auto"}}
+                                                  >
++                                                   악기
+                                                  <input
+                                                    type="text"
+                                                    className="w-full bg-gray-50 border border-gray-200 rounded-lg p-3..."
+                                                    value=""
+                                                    onChange={function onChange}
+                                                    placeholder="예: 바이올린"
+-                                                   style={{user-select:"auto"}}
+                                                  >
+                                                <div
+-                                                 style={{user-select:"auto"}}
+                                                >
+                                                  <label
+                                                    className="block text-sm font-semibold mb-1.5 text-gray-700"
+-                                                   style={{user-select:"auto"}}
+                                                  >
++                                                   교재 / 단원
+                                                  <input
+                                                    type="text"
+                                                    className="w-full bg-gray-50 border border-gray-200 rounded-lg p-3..."
+                                                    value=""
+                                                    onChange={function onChange}
+                                                    placeholder="예: 스즈키 3권"
+-                                                   style={{user-select:"auto"}}
+                                                  >
+                                                <div
+-                                                 style={{user-select:"auto"}}
+                                                >
+                                                  <label
+                                                    className="block text-sm font-semibold mb-1.5 text-gray-700"
+-                                                   style={{user-select:"auto"}}
+                                                  >
++                                                   곡명
+                                                  <input
+                                                    type="text"
+                                                    className="w-full bg-gray-50 border border-gray-200 rounded-lg p-3..."
+                                                    value=""
+                                                    onChange={function onChange}
+                                                    placeholder="예: 가보트"
+-                                                   style={{user-select:"auto"}}
+                                                  >
+                                          <div
+                                            className="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-gray-100"
+-                                           style={{user-select:"auto"}}
+                                          >
+                                            <h2
+                                              className="text-lg font-bold mb-5 flex items-center gap-2 text-gray-800"
+-                                             style={{user-select:"auto"}}
+                                            >
++                                             레슨 자료 업로드
+                                            <div
+                                              className="space-y-6"
+-                                             style={{user-select:"auto"}}
+                                            >
+                                              <div
+                                                className="bg-gray-50 p-5 border border-gray-200 rounded-xl transition..."
+-                                               style={{user-select:"auto"}}
+                                              >
+                                                <h3
+                                                  className="text-sm font-bold text-gray-800 mb-1 flex items-center gap-2"
+-                                                 style={{user-select:"auto"}}
+                                                >
++                                                 🎼 악보 파일/사진
+                                                <p
+                                                  className="text-xs text-gray-500 mb-3"
+-                                                 style={{user-select:"auto"}}
+                                                >
++                                                 오늘 학습한 악보 원본이나, 학생이 필기한 악보 사진을 올려주세요.
+                                                <input
+                                                  type="file"
+                                                  multiple={true}
+                                                  accept="image/*,application/pdf"
+                                                  className="text-sm block w-full file:mr-4 file:py-2 file:px-4 file:r..."
+                                                  onChange={function onChange}
+-                                                 style={{user-select:"auto"}}
+                                                >
+                                              <div
+                                                className="bg-gray-50 p-5 border border-gray-200 rounded-xl transition..."
+-                                               style={{user-select:"auto"}}
+                                              >
+                                                <h3
+                                                  className="text-sm font-bold text-gray-800 mb-1 flex items-center gap-2"
+-                                                 style={{user-select:"auto"}}
+                                                >
++                                                 👀 학생 연주 영상
+                                                <p
+                                                  className="text-xs text-gray-500 mb-3"
+-                                                 style={{user-select:"auto"}}
+                                                >
++                                                 레슨 중 학생이 연주하는 모습을 촬영한 영상을 올려주세요.
+                                                <input
+                                                  type="file"
+                                                  multiple={true}
+                                                  accept="video/*"
+                                                  className="text-sm block w-full file:mr-4 file:py-2 file:px-4 file:r..."
+                                                  onChange={function onChange}
+-                                                 style={{user-select:"auto"}}
+                                                >
+                                              <div
+                                                className="bg-gray-50 p-5 border border-gray-200 rounded-xl transition..."
+-                                               style={{user-select:"auto"}}
+                                              >
+                                                <h3
+                                                  className="text-sm font-bold text-gray-800 mb-1 flex items-center gap-2"
+-                                                 style={{user-select:"auto"}}
+                                                >
++                                                 🎹 선생님 시범 (영상/음원)
+                                                <p
+                                                  className="text-xs text-gray-500 mb-3"
+-                                                 style={{user-select:"auto"}}
+                                                >
++                                                 선생님이 직접 시범을 보여준 연주 영상이나 설명 음성 파일을 올려주세요.
+                                                <input
+                                                  type="file"
+                                                  multiple={true}
+                                                  accept="video/*,audio/*"
+                                                  className="text-sm block w-full file:mr-4 file:py-2 file:px-4 file:r..."
+                                                  onChange={function onChange}
+-                                                 style={{user-select:"auto"}}
+                                                >
+                                          <div
+                                            className="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-gray-100"
+-                                           style={{user-select:"auto"}}
+                                          >
+                                            <h2
+                                              className="text-lg font-bold mb-5 flex items-center gap-2 text-gray-800"
+-                                             style={{user-select:"auto"}}
+                                            >
++                                             레슨 메모
+                                            <div
+                                              className="space-y-6"
+-                                             style={{user-select:"auto"}}
+                                            >
+                                              <div
+-                                               style={{user-select:"auto"}}
+                                              >
+                                                <label
+                                                  className="block text-sm font-semibold mb-2 text-gray-700"
+-                                                 style={{user-select:"auto"}}
+                                                >
++                                                 강사 관찰 메모 (보관용)
+                                                <textarea
+                                                  className="w-full bg-gray-50 border border-gray-200 rounded-lg p-4 t..."
+                                                  placeholder="학부모나 AI에게는 보이지 않는 선생님만의 순수 관찰 기록입니다. 학생의 진도나 특이사항을 편하게 ..."
+                                                  value=""
+                                                  onChange={function onChange}
+-                                                 style={{user-select:"auto"}}
+                                                >
+                                              <div
+                                                className="bg-indigo-50/50 p-5 rounded-xl border border-indigo-100"
+-                                               style={{user-select:"auto"}}
+                                              >
+                                                <label
+                                                  className="block text-sm font-bold mb-2 text-indigo-900"
+-                                                 style={{user-select:"auto"}}
+                                                >
++                                                 AI 피드백 참고 메모
+                                                <textarea
+                                                  className="w-full bg-white border border-indigo-200 rounded-lg p-4 t..."
+                                                  placeholder="예: 두 번째 줄 마디 셋잇단음표 리듬감이 아주 좋아졌다고 칭찬해주세요. 다음 주에는 스타카토 연습..."
+                                                  value=""
+                                                  onChange={function onChange}
+-                                                 style={{user-select:"auto"}}
+                                                >
+                                                <p
+                                                  className="text-xs text-indigo-600 mt-2 font-medium"
+-                                                 style={{user-select:"auto"}}
+                                                >
++                                                 ※ 작성하신 메모 내용은 AI가 학부모용 레슨 피드백을 작성할 때 반드시 참고하는 핵심 기준이 됩니다.
+                                          <button
+                                            type="submit"
+                                            disabled={false}
+                                            className="w-full font-bold py-4 rounded-xl text-white transition-all text..."
+-                                           style={{user-select:"auto"}}
+                                          >
++                                           레슨 자료 저장 및 분석 준비
+                  ...
+ 
+    at <unknown> (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:3439:25)
+    at runWithFiberInDEV (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:965:74)
+    at emitPendingHydrationWarnings (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:3438:13)
+    at completeWork (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:6885:102)
+    at runWithFiberInDEV (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:965:131)
+    at completeUnitOfWork (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9622:23)
+    at performUnitOfWork (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9557:28)
+    at workLoopConcurrentByScheduler (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9551:58)
+    at renderRootConcurrent (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9534:71)
+    at performWorkOnRoot (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9061:150)
+    at performWorkOnRootViaSchedulerTask (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:10255:9)
+    at MessagePort.performWorkUntilDeadline (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_0rpq4pf._.js:2647:64) (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:3439:25)
