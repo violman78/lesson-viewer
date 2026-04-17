@@ -141,13 +141,33 @@ export default async function SharedLessonViewerPage({ params }: { params: Promi
               {feedback.core}
             </p>
           </div>
+          
+          {/* Quick Navigation (Table of Contents) */}
+          <div className="grid grid-cols-3 gap-3 mt-6">
+            {materials.length > 0 && (
+              <a href="#materials" className="bg-gray-50 border border-gray-100 rounded-xl p-3 flex flex-col items-center justify-center gap-1.5 hover:bg-indigo-50 hover:border-indigo-100 hover:text-indigo-700 transition-all text-gray-600 outline-none focus:ring-2 focus:ring-indigo-500">
+                <span className="text-xl">🎼</span>
+                <span className="text-[11px] font-bold">레슨 자료({materials.length})</span>
+              </a>
+            )}
+            <a href="#feedback" className="bg-gray-50 border border-gray-100 rounded-xl p-3 flex flex-col items-center justify-center gap-1.5 hover:bg-emerald-50 hover:border-emerald-100 hover:text-emerald-700 transition-all text-gray-600 outline-none focus:ring-2 focus:ring-emerald-500">
+              <span className="text-xl">✨</span>
+              <span className="text-[11px] font-bold">상세 피드백</span>
+            </a>
+            {homeworkList.length > 0 && (
+              <a href="#homework" className="bg-gray-50 border border-gray-100 rounded-xl p-3 flex flex-col items-center justify-center gap-1.5 hover:bg-amber-50 hover:border-amber-100 hover:text-amber-700 transition-all text-gray-600 outline-none focus:ring-2 focus:ring-amber-500">
+                <span className="text-xl">📝</span>
+                <span className="text-[11px] font-bold">연습 과제({homeworkList.length})</span>
+              </a>
+            )}
+          </div>
         </header>
 
         <div className="px-6 py-6 space-y-8 bg-[#FCFDFD]">
 
           {/* 본문 1: [핵심] 다중 학습 미디어 자료 구조화 */}
           {materials.length > 0 && (
-            <section className="space-y-3">
+            <section id="materials" className="space-y-3 scroll-mt-6">
               <h3 className="text-sm font-bold text-gray-400 flex items-center gap-1.5">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg>
                 레슨 자료 ({materials.length})
@@ -178,7 +198,7 @@ export default async function SharedLessonViewerPage({ params }: { params: Promi
           )}
 
           {/* 본문 2: 분절된 피드백 */}
-          <section className="space-y-4">
+          <section id="feedback" className="space-y-4 scroll-mt-6">
              <h3 className="text-sm font-bold text-gray-400 flex items-center gap-1.5">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path></svg>
                 상세 피드백
@@ -209,7 +229,7 @@ export default async function SharedLessonViewerPage({ params }: { params: Promi
 
           {/* 본문 3: 숙제 체크리스트 */}
           {homeworkList.length > 0 && (
-            <section className="space-y-3">
+            <section id="homework" className="space-y-3 scroll-mt-6">
                <h3 className="text-sm font-bold text-gray-400 flex items-center gap-1.5">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 11l3 3L22 4"></path><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
                   다음 레슨까지 숙제

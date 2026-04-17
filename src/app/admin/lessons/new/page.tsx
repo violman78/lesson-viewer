@@ -89,7 +89,7 @@ export default function NewLessonPage() {
       if (dbError) throw dbError;
 
       alert('레슨 기록이 성공적으로 저장되었습니다!');
-      router.push('/admin');
+      router.push(`/admin/lessons/${newLesson.id}/review`);
 
     } catch (err: any) {
       console.error(err);
