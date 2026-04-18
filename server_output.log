@@ -4850,3 +4850,4 @@ Import trace:
 [browser] GoTrueClient@sb-iafjnrbrmfrbybvuyoxg-auth-token:5 (2.103.2) 2026-04-17T01:08:32.500Z Multiple GoTrueClient instances detected in the same browser context. It is not an error, but this should be avoided as it may produce undefined behavior when used concurrently under the same storage key. (file:///Users/violman/음악교육 앱 제작/lesson-viewer/.next/dev/static/chunks/node_modules_next_dist_115brz8._.js:2431:13)
 ✓ Compiled in 283ms
   Reload env: .env.local
+  Reload env: .env.local

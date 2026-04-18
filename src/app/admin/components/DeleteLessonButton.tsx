@@ -8,7 +8,8 @@ export default function DeleteLessonButton({ lessonId }: { lessonId: string }) {
   const router = useRouter();
 
   const handleDelete = async (e: React.MouseEvent) => {
-    e.preventDefault(); // 카드 클릭(Link 이동) 이벤트 강제 중단
+    e.preventDefault();
+    e.stopPropagation(); // 부모 Link로의 이벤트 전파를 완전히 차단하여 페이지 이동을 막습니다.
     
     if (!confirm('정말 이 레슨 기록을 삭제하시겠습니까?\n삭제 후에는 학부모님 페이지에서도 보이지 않으며 복구할 수 없습니다.')) {
       return;
