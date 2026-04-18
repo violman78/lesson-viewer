@@ -1,5 +1,6 @@
 import { createClient } from '@supabase/supabase-js';
 
+// Build: 2026-04-18T21:30 - force fresh build with env vars
 // 브라우저 측에서만 실행되도록 설계된 클라이언트
 export const createBrowserSupabaseClient = () => {
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
