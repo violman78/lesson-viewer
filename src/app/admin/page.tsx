@@ -2,6 +2,8 @@ import Link from 'next/link';
 import { createServerSupabaseClient } from '@/lib/supabase/server';
 import DeleteLessonButton from './components/DeleteLessonButton';
 
+export const dynamic = 'force-dynamic';
+
 export default async function AdminDashboardPage() {
   const supabase = createServerSupabaseClient();
   
