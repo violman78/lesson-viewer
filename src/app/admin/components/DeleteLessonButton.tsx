@@ -21,8 +21,9 @@ export default function DeleteLessonButton({ lessonId }: { lessonId: string }) {
     if (error) {
       alert('삭제 중 오류가 발생했습니다: ' + error.message);
     } else {
-      alert('삭제되었습니다.');
-      router.refresh(); // 삭제 후 목록 새로고침
+      alert('성공적으로 삭제되었습니다.');
+      // router.refresh()보다 더 확실한 방식인 전체 새로고침을 통해 목록을 갱신합니다.
+      window.location.reload();
     }
   };
 

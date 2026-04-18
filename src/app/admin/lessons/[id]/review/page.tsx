@@ -146,7 +146,22 @@ export default function ReviewLessonPage({ params }: { params: Promise<{ id: str
   };
 
   if (loading) return <div className="p-10 font-bold">로딩 중...</div>;
-  if (!lesson) return <div className="p-10 font-bold text-red-500">{errorMsg || '데이터를 찾을 수 없습니다.'}</div>;
+  
+  if (!lesson) {
+    return (
+      <div className="min-h-screen flex flex-col items-center justify-center bg-gray-50 p-6 text-center">
+        <div className="w-20 h-20 bg-red-50 text-red-500 rounded-full flex items-center justify-center text-3xl mb-4">⚠️</div>
+        <h1 className="text-xl font-bold text-gray-900 mb-2">기록을 찾을 수 없습니다</h1>
+        <p className="text-gray-500 mb-6">이미 삭제되었거나 존재하지 않는 레슨 기록입니다.</p>
+        <button 
+          onClick={() => router.push('/admin')}
+          className="px-6 py-3 bg-indigo-600 text-white font-bold rounded-xl shadow-md hover:bg-indigo-700 transition-all"
+        >
+          관리자 대시보드로 돌아가기
+        </button>
+      </div>
+    );
+  }
 
   const materials = lesson.materials || [];
   const scoreFiles = materials.filter((m: any) => m.type === 'score');
