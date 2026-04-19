@@ -75,7 +75,7 @@ export default function FolderSidebar({ selectedFolderId, onSelectFolder }: Fold
     <aside className="space-y-6">
       <div className="glass-card p-6 rounded-3xl">
         <div className="flex justify-between items-center mb-6">
-          <h3 className="text-xs font-black text-indigo-400 uppercase tracking-widest">Navigation</h3>
+          <h3 className="text-xs font-black text-indigo-400 uppercase tracking-widest">📁 폴더</h3>
           <button 
             onClick={() => setIsCreating(true)}
             className="w-8 h-8 flex items-center justify-center bg-indigo-50 hover:bg-indigo-100 rounded-xl transition-colors text-indigo-600 shadow-sm"
