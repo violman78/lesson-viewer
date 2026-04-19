@@ -77,9 +77,7 @@ export default function NewLessonPage() {
       setStatusMsg('레슨 정보를 안전하게 저장하는 중입니다... (2/2)');
       
       const token = crypto.randomUUID();
-      const { data: newLesson, error: dbError } = await supabase
-        .from('lessons')
-        .insert({
+      const insertData: any = {
           share_token: token,
           student_name: formData.studentName,
           instrument: formData.instrument,
@@ -91,19 +89,40 @@ export default function NewLessonPage() {
           ai_reference_memo: memos.aiReferenceMemo, 
           ai_feedback: {}, 
           status: 'draft',
-          folder_id: selectedFolderId || null
-        })
+        };
+
+      // folder_id 컬럼이 DB에 있는 경우에만 추가
+      if (selectedFolderId) {
+        insertData.folder_id = selectedFolderId;
+      }
+
+      let { data: newLesson, error: dbError } = await supabase
+        .from('lessons')
+        .insert(insertData)
         .select()
         .single();
 
-      if (dbError) throw dbError;
+      // folder_id 컬럼이 아직 없으면 해당 필드 제거 후 재시도
+      if (dbError && (dbError.message?.includes('folder_id') || dbError.code === '42703')) {
+        console.warn('folder_id 컬럼이 아직 없습니다. 폴더 지정 없이 저장합니다.');
+        delete insertData.folder_id;
+        const retry = await supabase
+          .from('lessons')
+          .insert(insertData)
+          .select()
+          .single();
+        newLesson = retry.data;
+        dbError = retry.error;
+      }
+
+      if (dbError) throw new Error(dbError.message || JSON.stringify(dbError));
 
       setStatusMsg('레슨 저장 완료! 분석 페이지로 이동합니다.');
       router.push(`/admin/lessons/${newLesson.id}/review`);
 
     } catch (err: any) {
-      console.error(err);
-      setErrorMsg(err.message || '저장 중 오류가 발생했습니다.');
+      console.error('저장 오류 상세:', err);
+      setErrorMsg(err.message || JSON.stringify(err) || '저장 중 오류가 발생했습니다.');
       setIsSubmitting(false);
     }
   };

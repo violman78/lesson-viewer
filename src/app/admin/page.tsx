@@ -14,7 +14,10 @@ export default async function AdminDashboardPage({ searchParams }: PageProps) {
   const { folderId } = await searchParams;
   const supabase = createServerSupabaseClient();
   
-  // 데이터 불러오기 쿼리 구성
+  // 데이터 불러오기 쿼리 구성 (folders 테이블 미생성 시 자동 폴백)
+  let recentLessons: any[] | null = null;
+
+  // 먼저 folders join 포함 쿼리 시도
   let query = supabase
     .from('lessons')
     .select('*, folders(name)')
@@ -24,7 +27,20 @@ export default async function AdminDashboardPage({ searchParams }: PageProps) {
     query = query.eq('folder_id', folderId);
   }
 
-  const { data: recentLessons } = await query;
+  const { data, error } = await query;
+
+  if (error) {
+    // folders 테이블/컬럼이 없는 경우 기본 쿼리로 폴백
+    console.warn('폴더 조인 실패, 기본 쿼리로 폴백:', error.message);
+    const fallback = await supabase
+      .from('lessons')
+      .select('*')
+      .order('created_at', { ascending: false });
+    recentLessons = fallback.data;
+  } else {
+    recentLessons = data;
+  }
+
   const totalLessonsCount = recentLessons?.length || 0;
 
   return (
