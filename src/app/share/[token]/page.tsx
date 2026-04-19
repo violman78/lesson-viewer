@@ -65,14 +65,24 @@ export default async function SharedLessonViewerPage({ params }: { params: Promi
       expires_at: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString()
     };
   } else {
-    // [중요 변경] 새로운 컬럼(piece_title, lesson_date, materials, ai_feedback) 조회
+    // 레슨 데이터 조회
     const result = await supabase
       .from('lessons')
-      .select('student_name, piece_title, lesson_date, materials, ai_feedback, created_at, expires_at')
+      .select('id, student_name, piece_title, lesson_date, materials, ai_feedback, created_at, expires_at')
       .eq('share_token', token)
       .single();
     lesson = result.data;
     error = result.error;
+
+    // 학부모 첫 열람 시 → 7일 후 만료 자동 설정
+    if (lesson && !lesson.expires_at) {
+      const expiresAt = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString();
+      await supabase
+        .from('lessons')
+        .update({ expires_at: expiresAt })
+        .eq('id', lesson.id);
+      lesson.expires_at = expiresAt;
+    }
   }
 
   // 데이터 없거나 에러 처리
@@ -252,7 +262,9 @@ export default async function SharedLessonViewerPage({ params }: { params: Promi
         {/* 하단 안내문 */}
         <footer className="px-6 py-6 text-center border-t border-gray-100 bg-gray-50/50">
           <p className="text-xs text-gray-400 font-medium">
-             이 안내장은 {data.expires_at ? new Date(data.expires_at).toLocaleDateString() + '까지' : '일정 기간 동안'} 열람 가능합니다.
+             이 안내장은 {data.expires_at 
+               ? new Date(data.expires_at).toLocaleDateString('ko-KR', { year: 'numeric', month: 'long', day: 'numeric' }) + '까지' 
+               : '첫 열람일로부터 7일간'} 열람 가능합니다.
           </p>
         </footer>
         
