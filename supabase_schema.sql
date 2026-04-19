@@ -27,6 +27,16 @@ CREATE TABLE public.lessons (
     expires_at TIMESTAMP WITH TIME ZONE     -- 링크 무효화 시점 (접근 만료)
 );
 
+-- Folders 테이블 추가
+CREATE TABLE public.folders (
+    id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
+    name TEXT NOT NULL,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT timezone('utc'::text, now()) NOT NULL
+);
+
+-- Lessons 테이블에 folder_id 컬럼 추가 (기존 데이터 호환을 위해 NULL 허용)
+ALTER TABLE public.lessons ADD COLUMN folder_id UUID REFERENCES public.folders(id) ON DELETE SET NULL;
+
 -- RLS (Row Level Security) 설정이 필요하다면 추가 구성
 -- ALTER TABLE public.lessons ENABLE ROW LEVEL SECURITY;
 -- CREATE POLICY "Public can view valid tokens" ON public.lessons FOR SELECT USING (share_token IS NOT NULL);

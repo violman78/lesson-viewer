@@ -15,17 +15,26 @@ export default function NewLessonPage() {
   const [formData, setFormData] = useState({
     studentName: '',
     instrument: '',  
-    lessonDate: '', // 서버와의 시간(Hydration) 불일치 에러를 방지하기 위해 초기값을 비웁니다
+    lessonDate: '', 
     bookUnit: '',    
     pieceTitle: ''   
   });
 
-  // Hydration 처리가 끝난 직후 오늘 날짜를 클라이언트 브라우저 기준으로 밀어넣습니다.
+  const [folders, setFolders] = useState<any[]>([]);
+  const [selectedFolderId, setSelectedFolderId] = useState<string>('');
+
   useEffect(() => {
     setFormData(prev => ({
       ...prev,
       lessonDate: new Date().toISOString().split('T')[0]
     }));
+
+    async function fetchFolders() {
+      const supabase = createBrowserSupabaseClient();
+      const { data } = await supabase.from('folders').select('*').order('name');
+      if (data) setFolders(data);
+    }
+    fetchFolders();
   }, []);
 
   const [memos, setMemos] = useState({
@@ -76,133 +85,241 @@ export default function NewLessonPage() {
           instrument: formData.instrument,
           book_unit: formData.bookUnit,
           piece_title: formData.pieceTitle,
-          lesson_date: formData.lessonDate, // 명시적 작성된 폼 데이터 전송
+          lesson_date: formData.lessonDate, 
           materials: uploadedMaterials, 
           observation_memo: memos.observationMemo, 
           ai_reference_memo: memos.aiReferenceMemo, 
           ai_feedback: {}, 
-          status: 'draft' 
+          status: 'draft',
+          folder_id: selectedFolderId || null
         })
         .select()
         .single();
 
       if (dbError) throw dbError;
 
-      alert('레슨 기록이 성공적으로 저장되었습니다!');
+      setStatusMsg('레슨 저장 완료! 분석 페이지로 이동합니다.');
       router.push(`/admin/lessons/${newLesson.id}/review`);
 
     } catch (err: any) {
       console.error(err);
       setErrorMsg(err.message || '저장 중 오류가 발생했습니다.');
-    } finally {
       setIsSubmitting(false);
-      setStatusMsg('');
     }
   };
 
   return (
-    <div className="min-h-screen p-6 sm:p-10 bg-gray-50 text-gray-900 font-sans pb-32">
-      <div className="max-w-3xl mx-auto">
-        <div className="mb-8">
-          <h1 className="text-2xl font-extrabold tracking-tight">새 레슨 기록 등록</h1>
-          <p className="text-gray-500 mt-1">오늘 진행한 레슨 기록과 피드백 작성을 위한 자료를 올려주세요.</p>
+    <div className="min-h-screen px-4 py-10 sm:p-14 font-sans pb-32 relative overflow-hidden">
+      {/* 백그라운드 효과 */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-indigo-200/20 blur-[100px] -z-10 rounded-full"></div>
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-purple-200/20 blur-[100px] -z-10 rounded-full"></div>
+
+      <div className="max-w-4xl mx-auto">
+        <div className="mb-12">
+          <button 
+            onClick={() => router.back()}
+            className="group flex items-center gap-2 text-gray-400 hover:text-indigo-600 font-bold text-sm mb-6 transition-colors"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="group-hover:-translate-x-1 transition-transform"><path d="m15 18-6-6 6-6"></path></svg>
+            돌아가기
+          </button>
+          <h1 className="text-4xl font-black tracking-tight text-gray-900 mb-2">
+            🆕 새 레슨 기록
+          </h1>
+          <p className="text-gray-500 font-medium">선생님만의 소중한 기록을 프리미엄 디자인으로 시작하세요.</p>
         </div>
 
-        {errorMsg && (
-          <div className="bg-red-50 text-red-600 p-4 rounded-xl mb-6 font-bold border border-red-100">
-            [오류] {errorMsg}
-          </div>
-        )}
-
-        <form onSubmit={handleUploadAndSave} className="space-y-6">
+        <form onSubmit={handleUploadAndSave} className="space-y-10">
           
-          {/* 섹션 1: 기본 정보 */}
-          <div className="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-gray-100">
-            <h2 className="text-lg font-bold mb-5 flex items-center gap-2 text-gray-800">
+          {/* 기본 정보 */}
+          <section className="glass-card p-8 rounded-3xl shadow-xl border-white/40">
+            <h2 className="text-xl font-bold mb-6 flex items-center gap-3 text-gray-800">
+               <span className="w-10 h-10 flex items-center justify-center bg-indigo-600 text-white rounded-2xl text-sm font-black shadow-lg shadow-indigo-100 italic">01</span>
                레슨 기본 정보
             </h2>
-            <div className="space-y-5">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                <div>
-                  <label className="block text-sm font-semibold mb-1.5 text-gray-700">학생 이름 <span className="text-red-500">*</span></label>
-                  <input type="text" className="w-full bg-gray-50 border border-gray-200 rounded-lg p-3 text-sm focus:border-indigo-500 outline-none" value={formData.studentName} onChange={e => setFormData({...formData, studentName: e.target.value})} required placeholder="예: 김민준" />
-                </div>
-                <div>
-                  <label className="block text-sm font-semibold mb-1.5 text-gray-700">레슨 날짜 <span className="text-red-500">*</span></label>
-                  <input type="date" className="w-full bg-gray-50 border border-gray-200 rounded-lg p-3 text-sm focus:border-indigo-500 outline-none" value={formData.lessonDate} onChange={e => setFormData({...formData, lessonDate: e.target.value})} required />
-                </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="space-y-2">
+                <label className="block text-[11px] font-black text-gray-400 uppercase tracking-widest ml-1">Student Name</label>
+                <input 
+                  type="text" 
+                  className="w-full bg-white/40 border border-white/60 rounded-2xl p-4 font-bold text-gray-800 focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500 outline-none transition-all placeholder:text-gray-300 shadow-inner" 
+                  value={formData.studentName}
+                  onChange={e => setFormData({...formData, studentName: e.target.value})}
+                  required 
+                  placeholder="학생 이름을 입력하세요"
+                />
               </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
-                <div>
-                  <label className="block text-sm font-semibold mb-1.5 text-gray-700">악기</label>
-                  <input type="text" className="w-full bg-gray-50 border border-gray-200 rounded-lg p-3 text-sm focus:border-indigo-500 outline-none" value={formData.instrument} onChange={e => setFormData({...formData, instrument: e.target.value})} placeholder="예: 바이올린" />
-                </div>
-                <div>
-                  <label className="block text-sm font-semibold mb-1.5 text-gray-700">교재 / 단원</label>
-                  <input type="text" className="w-full bg-gray-50 border border-gray-200 rounded-lg p-3 text-sm focus:border-indigo-500 outline-none" value={formData.bookUnit} onChange={e => setFormData({...formData, bookUnit: e.target.value})} placeholder="예: 스즈키 3권" />
-                </div>
-                <div>
-                  <label className="block text-sm font-semibold mb-1.5 text-gray-700">곡명</label>
-                  <input type="text" className="w-full bg-gray-50 border border-gray-200 rounded-lg p-3 text-sm focus:border-indigo-500 outline-none" value={formData.pieceTitle} onChange={e => setFormData({...formData, pieceTitle: e.target.value})} placeholder="예: 가보트" />
-                </div>
+              <div className="space-y-2">
+                <label className="block text-[11px] font-black text-gray-400 uppercase tracking-widest ml-1">Lesson Date</label>
+                <input 
+                  type="date" 
+                  className="w-full bg-white/40 border border-white/60 rounded-2xl p-4 font-bold text-gray-800 focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500 outline-none transition-all shadow-inner" 
+                  value={formData.lessonDate}
+                  onChange={e => setFormData({...formData, lessonDate: e.target.value})}
+                  required 
+                />
+              </div>
+              <div className="space-y-2">
+                <label className="block text-[11px] font-black text-gray-400 uppercase tracking-widest ml-1">Select Folder</label>
+                <select 
+                  className="w-full bg-white/40 border border-white/60 rounded-2xl p-4 font-bold text-gray-800 focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500 outline-none transition-all cursor-pointer shadow-inner appearance-none"
+                  value={selectedFolderId}
+                  onChange={e => setSelectedFolderId(e.target.value)}
+                >
+                  <option value="">미분류 (Unsorted)</option>
+                  {folders.map(f => <option key={f.id} value={f.id}>{f.name}</option>)}
+                </select>
+              </div>
+              <div className="space-y-2">
+                <label className="block text-[11px] font-black text-gray-400 uppercase tracking-widest ml-1">Instrument</label>
+                <input 
+                  type="text" 
+                  className="w-full bg-white/40 border border-white/60 rounded-2xl p-4 font-bold text-gray-800 focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500 outline-none transition-all placeholder:text-gray-300 shadow-inner" 
+                  value={formData.instrument}
+                  onChange={e => setFormData({...formData, instrument: e.target.value})}
+                  placeholder="예: 바이올린, 첼로"
+                />
+              </div>
+              <div className="space-y-2">
+                <label className="block text-[11px] font-black text-gray-400 uppercase tracking-widest ml-1">Book & Unit</label>
+                <input 
+                  type="text" 
+                  className="w-full bg-white/40 border border-white/60 rounded-2xl p-4 font-bold text-gray-800 focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500 outline-none transition-all placeholder:text-gray-300 shadow-inner" 
+                  value={formData.bookUnit}
+                  onChange={e => setFormData({...formData, bookUnit: e.target.value})}
+                  placeholder="예: 스즈키 3권, 호만 1단계"
+                />
+              </div>
+              <div className="space-y-2">
+                <label className="block text-[11px] font-black text-gray-400 uppercase tracking-widest ml-1">Piece Title</label>
+                <input 
+                  type="text" 
+                  className="w-full bg-white/40 border border-white/60 rounded-2xl p-4 font-bold text-gray-800 focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500 outline-none transition-all placeholder:text-gray-300 shadow-inner" 
+                  value={formData.pieceTitle}
+                  onChange={e => setFormData({...formData, pieceTitle: e.target.value})}
+                  placeholder="예: 바흐 미뉴에트, 가보트"
+                />
               </div>
             </div>
-          </div>
+          </section>
 
-          {/* 섹션 2: 자료 업로드 */}
-          <div className="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-gray-100">
-            <h2 className="text-lg font-bold mb-5 flex items-center gap-2 text-gray-800">
-               레슨 자료 업로드
+          {/* 자료 업로드 */}
+          <section className="glass-card p-8 rounded-3xl shadow-xl border-white/40">
+             <h2 className="text-xl font-bold mb-8 flex items-center gap-3 text-gray-800">
+               <span className="w-10 h-10 flex items-center justify-center bg-purple-600 text-white rounded-2xl text-sm font-black shadow-lg shadow-purple-100 italic">02</span>
+               미디어 라이브러리 추가
             </h2>
-            <div className="space-y-6">
-              <div className="bg-gray-50 p-5 border border-gray-200 rounded-xl transition-colors hover:bg-gray-100/50">
-                 <h3 className="text-sm font-bold text-gray-800 mb-1 flex items-center gap-2">🎼 악보 파일/사진</h3>
-                 <p className="text-xs text-gray-500 mb-3">오늘 학습한 악보 원본이나, 학생이 필기한 악보 사진을 올려주세요.</p>
-                 <input type="file" multiple accept="image/*,application/pdf" className="text-sm block w-full file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-xs file:font-semibold file:bg-white file:text-gray-700 file:border file:border-gray-300 hover:file:bg-gray-50" onChange={e => setScoreFiles(Array.from(e.target.files || []))} />
-              </div>
-              
-              <div className="bg-gray-50 p-5 border border-gray-200 rounded-xl transition-colors hover:bg-gray-100/50">
-                 <h3 className="text-sm font-bold text-gray-800 mb-1 flex items-center gap-2">👀 학생 연주 영상</h3>
-                 <p className="text-xs text-gray-500 mb-3">레슨 중 학생이 연주하는 모습을 촬영한 영상을 올려주세요.</p>
-                 <input type="file" multiple accept="video/*" className="text-sm block w-full file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-xs file:font-semibold file:bg-white file:text-gray-700 file:border file:border-gray-300 hover:file:bg-gray-50" onChange={e => setStudentVideoFiles(Array.from(e.target.files || []))} />
-              </div>
-
-              <div className="bg-gray-50 p-5 border border-gray-200 rounded-xl transition-colors hover:bg-gray-100/50">
-                 <h3 className="text-sm font-bold text-gray-800 mb-1 flex items-center gap-2">🎹 선생님 시범 (영상/음원)</h3>
-                 <p className="text-xs text-gray-500 mb-3">선생님이 직접 시범을 보여준 연주 영상이나 설명 음성 파일을 올려주세요.</p>
-                 <input type="file" multiple accept="video/*,audio/*" className="text-sm block w-full file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-xs file:font-semibold file:bg-white file:text-gray-700 file:border file:border-gray-300 hover:file:bg-gray-50" onChange={e => setTeacherDemoFiles(Array.from(e.target.files || []))} />
-              </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {[
+                { label: '🎼 Score & Photos', files: scoreFiles, set: setScoreFiles, accept: 'image/*,application/pdf', color: 'bg-indigo-50', icon: 'M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6' },
+                { label: '📼 Student Video', files: studentVideoFiles, set: setStudentVideoFiles, accept: 'video/*', color: 'bg-rose-50', icon: 'm22 7-8.5 8.5L10 11 2 19' },
+                { label: '🎙️ Demo & Audio', files: teacherDemoFiles, set: setTeacherDemoFiles, accept: 'video/*,audio/*', color: 'bg-amber-50', icon: 'M12 1v22M19 8l-7 7-7-7' },
+              ].map((item, idx) => (
+                <div key={idx} className={`relative group/upload ${item.color}/40 p-6 rounded-3xl border border-white transition-all hover:bg-white hover:shadow-xl hover:-translate-y-1`}>
+                  <div className="flex flex-col items-center text-center gap-4">
+                    <div className={`w-14 h-14 rounded-2xl bg-white shadow-sm flex items-center justify-center text-gray-800 mb-2`}>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+                    </div>
+                    <div>
+                      <h3 className="font-black text-sm text-gray-800 mb-1">{item.label}</h3>
+                      <p className="text-[10px] font-bold text-gray-400 px-4 uppercase tracking-tighter">Tap to upload files</p>
+                    </div>
+                    <label className="absolute inset-0 cursor-pointer opacity-0">
+                      <input 
+                        type="file" 
+                        multiple 
+                        accept={item.accept} 
+                        onChange={e => item.set(prev => [...prev, ...Array.from(e.target.files || [])])} 
+                      />
+                    </label>
+                  </div>
+                  {item.files.length > 0 && (
+                    <div className="mt-6 space-y-2">
+                      {item.files.map((f, fIdx) => (
+                        <div key={fIdx} className="bg-white/80 backdrop-blur-sm px-3 py-2 rounded-xl text-[10px] font-black text-gray-600 border border-white flex items-center justify-between group/item shadow-sm">
+                          <span className="truncate max-w-[100px]">{f.name}</span>
+                          <button type="button" onClick={() => item.set(prev => prev.filter((_, i) => i !== fIdx))} className="text-gray-300 hover:text-rose-500 transition-colors">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
+                          </button>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ))}
             </div>
-          </div>
+          </section>
 
-          {/* 섹션 3: 레슨 메모 */}
-          <div className="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-gray-100">
-            <h2 className="text-lg font-bold mb-5 flex items-center gap-2 text-gray-800">
-               레슨 메모
+          {/* 메모 섹션 */}
+          <section className="glass-card p-8 rounded-3xl shadow-xl border-white/40">
+            <h2 className="text-xl font-bold mb-8 flex items-center gap-3 text-gray-800">
+               <span className="w-10 h-10 flex items-center justify-center bg-amber-500 text-white rounded-2xl text-sm font-black shadow-lg shadow-amber-100 italic">03</span>
+               레슨 인사이트
             </h2>
-            <div className="space-y-6">
-              <div>
-                <label className="block text-sm font-semibold mb-2 text-gray-700">강사 관찰 메모 (보관용)</label>
-                <textarea className="w-full bg-gray-50 border border-gray-200 rounded-lg p-4 text-sm focus:border-indigo-500 outline-none h-24 placeholder:text-gray-400" placeholder="학부모나 AI에게는 보이지 않는 선생님만의 순수 관찰 기록입니다. 학생의 진도나 특이사항을 편하게 남겨주세요." value={memos.observationMemo} onChange={e => setMemos({...memos, observationMemo: e.target.value})}></textarea>
+            <div className="space-y-8">
+              <div className="space-y-3">
+                <label className="block text-[11px] font-black text-gray-400 ml-1 uppercase tracking-widest">Observation Memo (Private)</label>
+                <textarea 
+                  className="w-full bg-white/40 border border-white/60 rounded-3xl p-6 font-bold text-gray-800 focus:ring-4 focus:ring-gray-200/50 outline-none transition-all min-h-[140px] placeholder:text-gray-300 shadow-inner"
+                  placeholder="학생의 성향, 연습 태도 등 선생님만 보실 수 있는 기록을 남겨보세요..."
+                  value={memos.observationMemo}
+                  onChange={e => setMemos({...memos, observationMemo: e.target.value})}
+                />
               </div>
-              <div className="bg-indigo-50/50 p-5 rounded-xl border border-indigo-100">
-                <label className="block text-sm font-bold mb-2 text-indigo-900">AI 피드백 참고 메모</label>
-                <textarea className="w-full bg-white border border-indigo-200 rounded-lg p-4 text-sm focus:border-indigo-500 outline-none h-24 text-gray-800 placeholder:text-indigo-300" placeholder="예: 두 번째 줄 마디 셋잇단음표 리듬감이 아주 좋아졌다고 칭찬해주세요. 다음 주에는 스타카토 연습을 숙제로 내주세요." value={memos.aiReferenceMemo} onChange={e => setMemos({...memos, aiReferenceMemo: e.target.value})}></textarea>
-                <p className="text-xs text-indigo-600 mt-2 font-medium">※ 작성하신 메모 내용은 AI가 학부모용 레슨 피드백을 작성할 때 반드시 참고하는 핵심 기준이 됩니다.</p>
+              <div className="space-y-3 p-8 bg-indigo-600 rounded-[40px] shadow-2xl shadow-indigo-200 relative overflow-hidden group/ai">
+                <div className="absolute -top-10 -right-10 w-40 h-40 bg-white/10 blur-3xl rounded-full transition-transform group-hover/ai:scale-150 duration-700"></div>
+                <label className="block text-[11px] font-black text-indigo-200 ml-1 uppercase tracking-widest mb-1 flex items-center gap-2">
+                   <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"></path></svg>
+                   AI Report Guide (Public Feedback)
+                </label>
+                <textarea 
+                  className="w-full bg-indigo-500/30 border border-white/20 rounded-2xl p-6 font-bold text-white focus:ring-4 focus:ring-white/10 outline-none transition-all min-h-[140px] placeholder:text-indigo-200/60 shadow-inner resize-none"
+                  placeholder="학부모님께 전달될 AI 리포트에 꼭 들어갔으면 하는 내용을 적어주세요!"
+                  value={memos.aiReferenceMemo}
+                  onChange={e => setMemos({...memos, aiReferenceMemo: e.target.value})}
+                />
+                <p className="text-[11px] font-bold text-indigo-100/60 mt-4 px-1 italic">
+                  ※ 이 내용은 데이터 분석 후 학부모용 프리미엄 리포트로 재구성됩니다.
+                </p>
               </div>
+            </div>
+          </section>
+
+          {/* 하단 고정 액션바 */}
+          <div className="fixed bottom-0 left-0 right-0 p-8 bg-white/60 backdrop-blur-3xl border-t border-white/20 z-40">
+            <div className="max-w-4xl mx-auto flex items-center justify-between gap-6">
+               <div className="hidden sm:block">
+                  <p className="text-xs font-black text-gray-400 uppercase tracking-widest mb-0.5 italic">Ready to archive?</p>
+                  <p className="text-sm font-black text-indigo-600">완료 버튼을 눌러 레슨 리포트를 생성하세요.</p>
+               </div>
+               <button 
+                type="submit" 
+                disabled={isSubmitting}
+                className={`flex-1 sm:flex-none sm:min-w-[280px] premium-gradient hover:opacity-90 text-white font-black py-5 px-10 rounded-2xl transition-all shadow-2xl shadow-indigo-200 active:scale-95 disabled:opacity-50 disabled:scale-100 flex items-center justify-center gap-3`}
+              >
+                {isSubmitting ? (
+                  <>
+                    <div className="w-5 h-5 border-3 border-white/30 border-t-white rounded-full animate-spin"></div>
+                    <span className="animate-pulse">{statusMsg || 'Archiving...'}</span>
+                  </>
+                ) : (
+                  <>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v13a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg>
+                    <span>레슨 보관 및 분석 시작</span>
+                  </>
+                )}
+              </button>
             </div>
           </div>
 
-          <button 
-            type="submit" 
-            disabled={isSubmitting}
-            className={`w-full font-bold py-4 rounded-xl text-white transition-all text-lg shadow-md hover:shadow-lg ${isSubmitting ? 'bg-gray-400' : 'bg-gray-900 hover:bg-gray-800'}`}
-          >
-            {isSubmitting ? statusMsg : '레슨 자료 저장 및 분석 준비'}
-          </button>
         </form>
 
+        {errorMsg && (
+          <div className="fixed top-10 left-1/2 -translate-x-1/2 bg-rose-500 text-white px-8 py-4 rounded-3xl font-black shadow-2xl z-50 animate-in slide-in-from-top-10 flex items-center gap-3">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+            {errorMsg}
+          </div>
+        )}
       </div>
     </div>
   );
