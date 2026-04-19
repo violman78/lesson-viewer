@@ -129,9 +129,9 @@ export default async function SharedLessonViewerPage({ params }: { params: Promi
                 </p>
               </div>
             </div>
-            {/* AI Report 문구 */}
+            {/* 리포트 배지 */}
             <div className="bg-blue-50 text-blue-600 px-2.5 py-1 rounded-md text-[10px] font-bold tracking-wider">
-              AI ASSISTED
+              선생님 리포트
             </div>
           </div>
           
