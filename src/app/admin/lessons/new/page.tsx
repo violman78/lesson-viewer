@@ -22,6 +22,7 @@ export default function NewLessonPage() {
 
   const [folders, setFolders] = useState<any[]>([]);
   const [selectedFolderId, setSelectedFolderId] = useState<string>('');
+  const [folderReady, setFolderReady] = useState(false);
 
   useEffect(() => {
     setFormData(prev => ({
@@ -30,9 +31,16 @@ export default function NewLessonPage() {
     }));
 
     async function fetchFolders() {
-      const supabase = createBrowserSupabaseClient();
-      const { data } = await supabase.from('folders').select('*').order('name');
-      if (data) setFolders(data);
+      try {
+        const supabase = createBrowserSupabaseClient();
+        const { data, error } = await supabase.from('folders').select('*').order('name');
+        if (!error && data) {
+          setFolders(data);
+          setFolderReady(true);
+        }
+      } catch (e) {
+        console.warn('folders 테이블 미생성 상태 - 폴더 기능 비활성화');
+      }
     }
     fetchFolders();
   }, []);
@@ -92,7 +100,7 @@ export default function NewLessonPage() {
         };
 
       // folder_id 컬럼이 DB에 있는 경우에만 추가
-      if (selectedFolderId) {
+      if (folderReady && selectedFolderId) {
         insertData.folder_id = selectedFolderId;
       }
 
@@ -178,6 +186,7 @@ export default function NewLessonPage() {
                   required 
                 />
               </div>
+              {folderReady && (
               <div className="space-y-2">
                 <label className="block text-[11px] font-black text-gray-400 uppercase tracking-widest ml-1">Select Folder</label>
                 <select 
@@ -189,6 +198,7 @@ export default function NewLessonPage() {
                   {folders.map(f => <option key={f.id} value={f.id}>{f.name}</option>)}
                 </select>
               </div>
+              )}
               <div className="space-y-2">
                 <label className="block text-[11px] font-black text-gray-400 uppercase tracking-widest ml-1">Instrument</label>
                 <input 
