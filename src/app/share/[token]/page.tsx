@@ -1,3 +1,4 @@
+import { Metadata } from 'next';
 import { createServerSupabaseClient } from '@/lib/supabase/server';
 
 // [중요 변경] 다중 미디어 및 명시적 피드백 구조를 지원하는 새로운 스키마 적용
@@ -24,6 +25,36 @@ type LessonRecord = {
   created_at: string;
   expires_at?: string;
 };
+
+export async function generateMetadata({ params }: { params: Promise<{ token: string }> }): Promise<Metadata> {
+  const { token } = await params;
+  const supabase = createServerSupabaseClient();
+  
+  let studentName = "학생";
+  
+  if (token === 'demo') {
+    studentName = "바이올린 꿈나무";
+  } else {
+    const { data } = await supabase
+      .from('lessons')
+      .select('student_name')
+      .eq('share_token', token)
+      .single();
+    if (data?.student_name) {
+      studentName = data.student_name;
+    }
+  }
+
+  return {
+    title: `${studentName}님의 레슨 리포트`,
+    description: "선생님이 정성껏 작성한 오늘의 레슨 기록입니다. 여기를 눌러 확인하세요.",
+    openGraph: {
+      title: `${studentName}님의 레슨 리포트`,
+      description: "선생님이 정성껏 작성한 오늘의 레슨 기록입니다. 여기를 눌러 확인하세요.",
+      type: 'website',
+    }
+  };
+}
 
 export default async function SharedLessonViewerPage({ params }: { params: Promise<{ token: string }> }) {
   const { token } = await params;
